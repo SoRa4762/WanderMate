@@ -1,18 +1,12 @@
-import { useState } from "react";
 import headerImage from "../../assets/mountain1.jpg";
-import { RxHamburgerMenu } from "react-icons/rx";
 import "../../styles/Landing/LandingHeader.css";
+import Navigation from "../Navigation/Navigation";
 
 const LandingHeader = () => {
-  const [open, setOpen] = useState(false);
   return (
     <>
       <div className="landing-header-container">
-        <RxHamburgerMenu
-          onClick={() => setOpen(true)}
-          size={40}
-          color="white"
-        />
+        <Navigation />
         <div className="landing-header-image">
           <img src={headerImage} alt="Header Image" />
         </div>
