@@ -27,7 +27,7 @@ const Navigation = () => {
         />
 
         {/* its proving qutie difficult to accurately animate using framer motion.. okay.. skip for now, lets head other side now */}
-        <motion.ul
+        {/* <motion.ul
           initial={{ opacity: 0, x: -300 }}
           animate={{
             opacity: openNav ? 1 : 0,
@@ -59,7 +59,7 @@ const Navigation = () => {
           <li>
             <a href="/contact">Contact</a>
           </li>
-        </motion.ul>
+        </motion.ul> */}
       </div>
     </>
   );
