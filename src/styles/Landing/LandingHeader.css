@@ -1,5 +1,5 @@
 .landing-header-container {
-  height: 12vh;
+  height: 10vh;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -9,7 +9,7 @@
 
 .landing-header-image {
   height: 100%;
-  width: 35%;
+  width: 36%;
 }
 
 .landing-header-image > img {
@@ -17,7 +17,7 @@
   width: 100%;
   object-fit: cover;
   overflow: hidden;
-  clip-path: polygon(0 0, 100% 0, 100% 92%, 79% 100%, 0 44%);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 75% 100%, 0 25%);
 }
 
 /* these are for later, when we leave medium sized screen */
