@@ -7,7 +7,7 @@ const Landing = () => {
       <div
         className="h-[100vh] w-full"
         style={{
-          background: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/src/assets/mountain1.jpg")`,
+          background: `linear-gradient(rgba(0, 128, 128, 0.5), rgba(0, 128, 128, 0.5)), url("/src/assets/bg5.jpg")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
