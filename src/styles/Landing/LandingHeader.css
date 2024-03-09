@@ -6,31 +6,3 @@
   align-items: center;
   padding: 0 0 0 1rem;
 }
-
-.landing-header-image {
-  height: 100%;
-  width: 36%;
-}
-
-.landing-header-image > img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  overflow: hidden;
-  clip-path: polygon(0 0, 100% 0, 100% 90%, 75% 100%, 0 25%);
-}
-
-/* these are for later, when we leave medium sized screen */
-.landing-header-container > h1 {
-  font-size: large;
-  color: rgb(255, 238, 0);
-}
-
-.landing-header-container__nav {
-  display: flex;
-  gap: 4px;
-}
-
-.landing-header-container__nav > a {
-  text-decoration: none;
-}

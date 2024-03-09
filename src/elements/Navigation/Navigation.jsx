@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
+import { NavCont } from "../../helper/data";
 
 import "./Navigation.css";
 
@@ -15,7 +16,8 @@ const Navigation = () => {
 
   return (
     <>
-      <div className="nav-container">
+      {/* nav for phone */}
+      <div className="flex sm:hidden h-full w-full items-center">
         <GiHamburgerMenu
           style={{
             fontSize: "2rem",
@@ -47,19 +49,22 @@ const Navigation = () => {
             }}
             onClick={toggleMenu}
           />
-          <li>
-            <a href="/about">About</a>
-          </li>
-          <li>
-            <a href="/tours">Tours</a>
-          </li>
-          <li>
-            <a href="/sale">Sale</a>
-          </li>
-          <li>
-            <a href="/contact">Contact</a>
-          </li>
+          
         </motion.ul> */}
+      </div>
+
+      {/* nav for others */}
+      <div className="hidden sm:flex h-full w-full items-center justify-center gap-9 lg:gap-14">
+        {NavCont.map((nav, i) => (
+          <>
+            <li
+              key={i}
+              className="list-none text-base text-white md:text-lg lg:text-xl hover:border-b-2 hover:border-b-red-500"
+            >
+              <a href={nav.link}>{nav.navTitle}</a>
+            </li>
+          </>
+        ))}
       </div>
     </>
   );
