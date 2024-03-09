@@ -1,4 +1,4 @@
-import headerImage from "../../assets/img7.jpg";
+import headerImage from "../../assets/img4.jpg";
 import Navigation from "../Navigation/Navigation";
 
 const LandingHeader = () => {
