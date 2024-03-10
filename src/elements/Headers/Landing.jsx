@@ -1,13 +1,15 @@
-import headerImage from "../../assets/img4.jpg";
+import headerImage from "../../assets/headerImg2.jpg";
 import Navigation from "../Navigation/Navigation";
 
 const LandingHeader = () => {
   return (
     <>
       <div className="h-[10vh] w-full flex justify-between items-center">
-        <h1 className="sm:flex hidden w-1/3 text-yellow-500 font-bold text-2xl lg:text-3xl">
-          Explore.
-        </h1>
+        <div className="w-1/3 sm:flex hidden">
+          <h1 className="pl-4 md:pl-8 text-yellow-500 font-bold text-2xl lg:text-3xl">
+            Explore.
+          </h1>
+        </div>
         <Navigation />
         <div className="h-36 md:h-52 w-[42%] sm:w-1/3">
           <img

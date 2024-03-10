@@ -17,7 +17,7 @@ const Navigation = () => {
   return (
     <>
       {/* nav for phone */}
-      <div className="flex sm:hidden h-full w-full items-center">
+      <div className="flex sm:hidden pl-4 h-full w-full items-center">
         <GiHamburgerMenu
           style={{
             fontSize: "2rem",
