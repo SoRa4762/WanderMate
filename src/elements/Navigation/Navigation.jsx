@@ -17,7 +17,7 @@ const Navigation = () => {
   return (
     <>
       {/* nav for phone */}
-      <div className="flex sm:hidden h-full w-full items-center">
+      <div className="flex sm:hidden pl-4 h-full w-full items-center">
         <GiHamburgerMenu
           style={{
             fontSize: "2rem",
@@ -59,7 +59,7 @@ const Navigation = () => {
           <>
             <li
               key={i}
-              className="list-none text-base text-white md:text-lg lg:text-xl hover:border-b-2 hover:border-b-red-500"
+              className="list-none text-base text-white md:text-lg lg:text-xl hover:border-b-4 hover:border-b-yellow-500"
             >
               <a href={nav.link}>{nav.navTitle}</a>
             </li>
