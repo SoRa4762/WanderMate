@@ -21,7 +21,11 @@ const LandingFooter = () => {
             {footerLinks.map((link, i) => (
               <>
                 <li className="list-none cursor-pointer font-normal" key={i}>
-                  <a href={link.link} target="_blank">
+                  <a
+                    href={link.link}
+                    target="_blank"
+                    className="hover:border-b-4 hover:border-b-yellow-500"
+                  >
                     {link.linkTitle}
                   </a>
                 </li>
