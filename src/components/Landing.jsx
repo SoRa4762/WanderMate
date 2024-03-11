@@ -11,11 +11,12 @@ const Landing = () => {
           backgroundSize: "cover",
           backgroundPosition: "top",
 
-          "maxWidth: 500px": {
-            background: `linear-gradient(rgba(0, 128, 128, 0.6), rgba(0, 128, 128, 0.6)), url("/src/assets/bg7.jpg")`,
-            backgroundSize: "cover",
-            backgroundPosition: "top",
-          },
+          //! need to add background for mobile as well
+          // "maxWidth: 500px": {
+          //   background: `linear-gradient(rgba(0, 128, 128, 0.6), rgba(0, 128, 128, 0.6)), url("/src/assets/bg7.jpg")`,
+          //   backgroundSize: "cover",
+          //   backgroundPosition: "top",
+          // },
         }}
       >
         <LandingHeader />
@@ -26,7 +27,7 @@ const Landing = () => {
           </p>
           <h1
             className="font-bold text-7xl md:text-8xl lg:text-9xl"
-            style={{ textShadow: "4px 4px 4px rgba(0, 0, 0, 0.4)" }}
+            style={{ textShadow: "4px 8px 8px rgba(0, 0, 0, 0.4)" }}
           >
             <span className="text-yellow-500">NEP</span>
             AL
