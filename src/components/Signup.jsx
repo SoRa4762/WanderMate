@@ -1,6 +1,36 @@
+import { useState, useEffect } from "react";
 import SignUpImage from "../assets/undraw_signup.svg";
 
 const SignUp = () => {
+  const [signUpValues, setSignUpValues] = useState({});
+
+  // useEffect(() => {
+
+  // }, [signUpValues]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setSignUpValues((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+
+    console.log("Sign Up Values: ", signUpValues);
+  };
+
+  //for submit
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const userName = e.target[0].value;
+    const email = e.target[1].value;
+    const password = e.target[2].value;
+    const confirmPassword = e.target[3].value;
+    const iAgree = e.target[4].value;
+
+    await console.log(userName, email, password, confirmPassword, iAgree);
+  };
+
   return (
     <>
       <div className="h-[100vh] w-full sm:p-12 md:p-16 md:pl-28 md:pr-28 lg:pl-32 lg:pr-32">
@@ -10,7 +40,7 @@ const SignUp = () => {
         >
           {/* sign up form */}
           <form
-            action="submit"
+            onSubmit={handleSubmit}
             className="flex flex-col items-center gap-2 md:gap-4 lg:gap-6 justify-center pl-8 pr-8 sm:pl-12 sm:pr-12"
           >
             <h1 className="text-blue-600 text-3xl md:text-4xl lg:text-5xl font-bold">
@@ -23,14 +53,16 @@ const SignUp = () => {
               placeholder="Username"
               name="username"
               id="username"
+              onChange={handleChange}
             />
 
             <input
               className="h-10 md:h-14 pl-4 w-full border-2 border-blue-600 rounded-md focus:border-blue-600"
-              type="text"
+              type="email"
               placeholder="Email"
               name="email"
               id="email"
+              onChange={handleChange}
             />
 
             {/*if you add eye button, make sure to turn the type to text and back */}
@@ -40,6 +72,7 @@ const SignUp = () => {
               placeholder="Password"
               name="password"
               id="password"
+              onChange={handleChange}
             />
 
             <input
@@ -48,6 +81,7 @@ const SignUp = () => {
               placeholder="Confirm Password"
               name="confirmPassword"
               id="confirmPassword"
+              onChange={handleChange}
             />
 
             <button
@@ -57,7 +91,12 @@ const SignUp = () => {
               Sign Up
             </button>
             <div className="flex gap-2">
-              <input type="checkbox" name="Condition" id="Condition" />
+              <input
+                type="checkbox"
+                name="condition"
+                id="condition"
+                onChange={handleChange}
+              />
               <p>
                 I agree to all{" "}
                 <span className="text-blue-600">
