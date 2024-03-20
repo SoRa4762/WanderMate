@@ -4,8 +4,6 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
 import { NavCont } from "../../helper/data";
 
-import "./Navigation.css";
-
 const Navigation = () => {
   const [openNav, setOpenNav] = useState(false);
 

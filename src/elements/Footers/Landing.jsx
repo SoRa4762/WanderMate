@@ -17,15 +17,14 @@ const LandingFooter = () => {
 
         {/* links */}
         <div className="h-full flex items-end justify-end gap-4">
-          <div className="flex flex-wrap gap-4 md:gap-16 backdrop-blur-sm py-4 px-4">
+          <div className="h-16 flex items-center flex-wrap gap-4 md:gap-16 backdrop-blur-sm px-4">
             {footerLinks.map((link, i) => (
               <>
-                <li className="list-none cursor-pointer font-normal" key={i}>
-                  <a
-                    href={link.link}
-                    target="_blank"
-                    className="hover:border-b-4 hover:border-b-yellow-500"
-                  >
+                <li
+                  className="list-none cursor-pointer font-normal hover:border-b-4 hover:border-b-yellow-500"
+                  key={i}
+                >
+                  <a href={link.link} target="_blank">
                     {link.linkTitle}
                   </a>
                 </li>
