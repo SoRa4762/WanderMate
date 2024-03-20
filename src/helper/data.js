@@ -39,3 +39,22 @@ export const footerLinks = [
     link: "https://www.google.com/",
   },
 ];
+
+export const navOverall = [
+  {
+    linkTitle: "Home",
+    link: "/home",
+  },
+  {
+    linkTitle: "Destination",
+    link: "/destination",
+  },
+  {
+    linkTitle: "Travel Packages",
+    link: "/tavelpackages",
+  },
+  {
+    linkTitle: "Hotels",
+    link: "/hotels",
+  },
+];
