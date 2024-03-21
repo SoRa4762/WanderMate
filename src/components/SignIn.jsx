@@ -10,7 +10,7 @@ const SignIn = () => {
       [name]: value,
     }));
 
-    console.log(signInValues);
+    // console.log(signInValues);
   };
 
   //for submit i guess
@@ -47,6 +47,7 @@ const SignIn = () => {
               name="username"
               id="username"
               onChange={handleChange}
+              value={signInValues["username"]}
             />
 
             {/*if you add eye button, make sure to turn the type to text and back */}
@@ -56,6 +57,7 @@ const SignIn = () => {
               placeholder="Password"
               name="password"
               id="password"
+              value={signInValues["password"]}
               onChange={handleChange}
             />
 
@@ -64,6 +66,7 @@ const SignIn = () => {
                 type="checkbox"
                 name="condition"
                 id="condition"
+                value={signInValues["condition"]}
                 onChange={handleChange}
               />
               <p>Remember Me </p>
