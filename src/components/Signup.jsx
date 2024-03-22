@@ -1,6 +1,5 @@
 // import { useState } from "react";
 import { useForm } from "react-hook-form";
-import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import SignUpImage from "../assets/undraw_signup.svg";
 import { signUpSchema } from "../Validations/userValidation";
