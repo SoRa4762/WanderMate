@@ -36,7 +36,7 @@ const NavigationOverall = () => {
         </div>
 
         {/* user profile */}
-        <div className="h-full flex items-center gap-2">
+        <div className="h-full flex items-center gap-2 cursor-pointer">
           <p>Username</p>
           <img
             className="h-12 w-full rounded-full"
