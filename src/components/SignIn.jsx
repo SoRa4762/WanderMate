@@ -102,9 +102,9 @@ const SignIn = () => {
 
             <button
               type="submit"
-              className="h-10 md:h-14 w-full bg-blue-600 rounded-md text-white font-bold text-lg"
+              className="h-10 md:h-14 w-full bg-blue-600 rounded-md text-white font-bold text-lg ease-in-out duration-300 hover:bg-blue-800"
             >
-              Sign Up
+              Sign In
             </button>
 
             <p className="font-normal">
