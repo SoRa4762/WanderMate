@@ -29,7 +29,7 @@ const Landing = () => {
             className="font-bold text-7xl md:text-8xl lg:text-9xl"
             style={{ textShadow: "4px 8px 8px rgba(0, 0, 0, 0.4)" }}
           >
-            <span className="text-yellow-500">NEP</span>
+            <span className="text-orange-600">NEP</span>
             AL
           </h1>
         </div>

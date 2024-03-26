@@ -8,7 +8,7 @@ const LandingHeader = () => {
         <div className="w-1/3 sm:flex hidden">
           <a
             href="/signup"
-            className="pl-4 md:pl-8 text-yellow-500 font-bold text-2xl lg:text-4xl hover:cursor-pointer"
+            className="pl-4 md:pl-8 text-orange-600 font-bold text-2xl lg:text-4xl hover:cursor-pointer"
             style={{ textShadow: "4px 4px 4px rgba(0, 0, 0, 0.4)" }}
           >
             Explore.
