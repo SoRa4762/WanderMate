@@ -117,7 +117,7 @@ const SignIn = () => {
 
           {/* sign up image */}
           <div className="flex flex-col justify-start lg:justify-center items-center pl-8 pr-8 gap-2 md:gap-4 lg:gap-6">
-            <img src={SignInImage} alt="Sign In Image" />
+            <img className="w-11/12" src={SignInImage} alt="Sign In Image" />
 
             <p>Or sign in with .... ....</p>
           </div>

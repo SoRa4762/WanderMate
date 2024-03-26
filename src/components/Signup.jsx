@@ -163,11 +163,7 @@ const SignUp = () => {
 
           {/* sign up image */}
           <div className="flex flex-col justify-center items-center pl-8 pr-8 gap-2 md:gap-4 lg:gap-6">
-            <img
-              className="w-72 lg:w-full"
-              src={SignUpImage}
-              alt="sign up Image"
-            />
+            <img className="w-11/12" src={SignUpImage} alt="sign up Image" />
             <p className="font-normal">
               Already a Member?{" "}
               <span className="text-blue-600">
