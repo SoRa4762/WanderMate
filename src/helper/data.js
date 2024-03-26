@@ -3,6 +3,10 @@ import Boudha from "../assets/headerImg2.jpg";
 import Lumbini from "../assets/lumbini.jpg";
 import Dharan from "../assets/Dharan.jpg";
 import Pokhara from "../assets/pokhara.jpg";
+import Hotel1 from "../assets/hotel1.jpg";
+import Hotel2 from "../assets/hotel2.jpg";
+import Hotel3 from "../assets/hotel.jpg";
+import Hotel4 from "../assets/hotel4.jpg";
 
 export const NavCont = [
   {
@@ -100,5 +104,32 @@ export const homeItems = [
     weather: "sunny",
     img: Dharan,
     desc: "Dharan, a vibrant city at the foothills of the Mahabharata range, is a gateway to the eastern Himalayas and a melting pot of diverse cultures. Explore the sacred Budha Subba Temple, where wishes are believed to come true, or marvel at the Namaste Falls, cascading down to form a natural 'namaste’. The central Pindeshwor Temple invites you to witness the eternal flame and feel the spiritual energy during the auspicious months1. For breathtaking views, ascend the Vijayapur Hill, and let the panorama of the city and beyond captivate your senses. Whether you’re seeking adventure, spirituality, or simply a taste of local life, Dharan’s rich tapestry of experiences promises an unforgettable journey",
+  },
+];
+
+export const hotels = [
+  {
+    id: 1,
+    name: "Hotel 1",
+    price: 120,
+    img: Hotel1,
+  },
+  {
+    id: 2,
+    name: "Hotel 2",
+    price: 100,
+    img: Hotel2,
+  },
+  {
+    id: 3,
+    name: "Hotel 3",
+    price: 80,
+    img: Hotel3,
+  },
+  {
+    id: 4,
+    name: "Hotel 4",
+    price: 150,
+    img: Hotel4,
   },
 ];
