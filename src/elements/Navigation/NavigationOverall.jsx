@@ -4,7 +4,7 @@ import { navOverall } from "../../helper/data";
 const NavigationOverall = () => {
   return (
     <>
-      <div className="h-[7vh] w-full flex justify-between items-center font-bold lg:text-xl">
+      <div className="h-[7vh] w-full flex justify-between items-center font-bold lg:text-xl pt-2">
         {/* menu */}
         <svg
           xmlns="http://www.w3.org/2000/svg"

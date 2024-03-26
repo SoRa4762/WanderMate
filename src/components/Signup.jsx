@@ -134,7 +134,7 @@ const SignUp = () => {
 
             <button
               type="submit"
-              className="h-10 md:h-14 w-full bg-blue-600 rounded-md text-white font-bold text-lg"
+              className="h-10 md:h-14 w-full bg-blue-600 rounded-md text-white font-bold text-lg ease-in-out duration-300 hover:bg-blue-800"
             >
               Sign Up
             </button>
@@ -163,11 +163,7 @@ const SignUp = () => {
 
           {/* sign up image */}
           <div className="flex flex-col justify-center items-center pl-8 pr-8 gap-2 md:gap-4 lg:gap-6">
-            <img
-              className="w-72 lg:w-full"
-              src={SignUpImage}
-              alt="sign up Image"
-            />
+            <img className="w-11/12" src={SignUpImage} alt="sign up Image" />
             <p className="font-normal">
               Already a Member?{" "}
               <span className="text-blue-600">
