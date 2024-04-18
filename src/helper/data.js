@@ -133,3 +133,71 @@ export const hotels = [
     img: Hotel4,
   },
 ];
+
+export const ffAll = [
+  {
+    id: 1,
+    name: "About Us",
+    href: "",
+  },
+  {
+    id: 2,
+    name: "Home",
+    href: "/",
+  },
+  {
+    id: 3,
+    name: "Destinations",
+    href: "/destinations",
+  },
+  {
+    id: 4,
+    name: "Tours",
+    href: "/tours",
+  },
+  {
+    id: 5,
+    name: "Hotels",
+    href: "/hotels",
+  },
+  {
+    id: 6,
+    name: "Flights",
+    href: "/flights",
+  },
+  {
+    id: 7,
+    name: "Car Rentals",
+    href: "/car-rentals",
+  },
+  {
+    id: 8,
+    name: "Activities",
+    href: "/activities",
+  },
+  {
+    id: 9,
+    name: "Deals",
+    href: "/deals",
+  },
+  {
+    id: 10,
+    name: "Blog",
+    href: "/blog",
+  },
+  {
+    id: 11,
+    name: "Contact Us",
+    href: "/contact",
+  },
+  {
+    id: 12,
+    name: "Terms of Service",
+    href: "/tos",
+  },
+  {
+    id: 13,
+    name: "Privacy Policy",
+    href: "/privacy",
+  },
+];
