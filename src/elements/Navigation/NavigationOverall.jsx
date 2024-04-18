@@ -27,7 +27,7 @@ const NavigationOverall = () => {
             <>
               <li
                 key={index}
-                className="list-none cursor-pointer hover:border-b-4 hover:border-b-blue-600"
+                className="list-none cursor-pointer text-xl hover:border-b-4 hover:border-b-blue-600"
               >
                 <a href={nav.link}>{nav.linkTitle}</a>
               </li>
