@@ -10,25 +10,33 @@ const FFAll = () => {
           </h3>
           {ffAll.slice(0, 5).map((about) => (
             <>
-              <p className="">{about.name}</p>
+              <p className="">
+                <a href={about.link}>{about.name}</a>
+              </p>
             </>
           ))}
         </div>
 
         <div>
-          <h3>Explore</h3>
+          <h3 className="text-gray-800 font-semibold text-xl">Explore</h3>
           {ffAll.slice(5, 9).map((explore) => (
             <>
-              <p>{explore.name}</p>
+              <p>
+                <a href={explore.link}>{explore.name}</a>
+              </p>
             </>
           ))}
         </div>
 
         <div>
-          <h3>Trip-Advisor Sites</h3>
+          <h3 className="text-gray-800 font-semibold text-xl">
+            Trip-Advisor Sites
+          </h3>
           {ffAll.slice(-3).map((extra) => (
             <>
-              <p>{extra.name}</p>
+              <p>
+                <a href={extra.link}>{extra.name}</a>
+              </p>
             </>
           ))}
         </div>
