@@ -1,10 +1,21 @@
 import { useState } from "react";
 // import { homeItems } from "../helper/data";
+import "animate.css";
 
 const MyCarousel = ({ data }) => {
   const [itemId, setItemId] = useState(1);
+  const [expanded, setExpanded] = useState(false);
+  const [animate, setAnimate] = useState(false);
   const handleItemId = (id) => {
     setItemId(id);
+  };
+
+  const handleAnimate = () => {
+    setExpanded(!expanded);
+    setAnimate(true);
+    setTimeout(() => {
+      setAnimate(false);
+    }, 500);
   };
 
   //   setTimeout(() => {
@@ -52,14 +63,31 @@ const MyCarousel = ({ data }) => {
         </div>
 
         {/* desc */}
-        <div className="h-full w-full p-8 mt-4 shadow-2xl">
+        <div
+          className={`h-full w-full p-8 mt-4 shadow-2xl ${
+            animate && "animate__fadeInDown"
+          }`}
+        >
           {data
             .filter((item) => item.id === itemId)
             .map((item) => (
-              <p className="text-center" key={item.id}>
+              <p
+                className={`text-center overflow-hidden animate__animated ${
+                  expanded ? "line-clamp-none" : "line-clamp-4"
+                }
+                ${animate && "animate__fadeInDown"}`}
+                // style={{ WebkitLineClamp: expanded ? "unset" : 3 }}
+                key={item.id}
+              >
                 {item.desc}
               </p>
             ))}
+          <button
+            className="flex h-full w-full justify-end font-semibold"
+            onClick={handleAnimate}
+          >
+            {expanded ? "See Less" : "See More"}
+          </button>
         </div>
       </div>
     </>
