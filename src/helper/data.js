@@ -7,6 +7,10 @@ import Hotel1 from "../assets/hotel1.jpg";
 import Hotel2 from "../assets/hotel2.jpg";
 import Hotel3 from "../assets/hotel.jpg";
 import Hotel4 from "../assets/hotel4.jpg";
+import ttd1 from "../assets/bg.jpg";
+import ttd2 from "../assets/bg3.jpg";
+import ttd3 from "../assets/bg5.jpg";
+import ttd4 from "../assets/bg6.jpg";
 
 export const NavCont = [
   {
@@ -134,6 +138,33 @@ export const hotels = [
   },
 ];
 
+export const thingsToDo = [
+  {
+    id: 1,
+    name: "Swimming",
+    price: 100,
+    img: ttd1,
+  },
+  {
+    id: 2,
+    name: "Gym",
+    price: 50,
+    img: ttd2,
+  },
+  {
+    id: 3,
+    name: "Spa",
+    price: 150,
+    img: ttd3,
+  },
+  {
+    id: 4,
+    name: "Tennis Court",
+    price: 80,
+    img: ttd4,
+  },
+];
+
 export const ffAll = [
   {
     id: 1,
@@ -199,5 +230,10 @@ export const ffAll = [
     id: 13,
     name: "Privacy Policy",
     link: "/privacy",
+  },
+  {
+    id: 14,
+    name: "Terms and Conditions",
+    link: "/termsconditions",
   },
 ];

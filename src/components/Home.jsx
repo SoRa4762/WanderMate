@@ -1,5 +1,5 @@
 import NavigationOverall from "../elements/Navigation/NavigationOverall";
-import { hotels, homeItems } from "../helper/data";
+import { hotels, thingsToDo, homeItems } from "../helper/data";
 import TopHotels from "../assets/bg4.jpg";
 import TopTravelPackage from "../assets/bg5.jpg";
 import ThingsToDo from "../assets/bg.jpg";
@@ -17,7 +17,7 @@ const Home = () => {
 
         <div className="h-full w-full flex flex-col">
           {/* hotels */}
-          <div className="h-full w-full flex flex-col pt-4 px-10">
+          <div className="h-full w-full flex flex-col pt-4 sm:px-10">
             {/* heading */}
             <div className="flex gap-2 items-center pt-8">
               <img
@@ -30,7 +30,7 @@ const Home = () => {
               </h1>
             </div>
             {/* cards */}
-            <div className="h-full w-full grid sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
+            <div className="h-full w-full grid grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
               {hotels.map((item) => (
                 <>
                   <div
@@ -55,7 +55,7 @@ const Home = () => {
           </div>
 
           {/* top travel packages */}
-          <div className="h-full w-full flex flex-col px-10">
+          <div className="h-full w-full flex flex-col sm:px-10">
             {/* heading */}
             <div className="flex gap-2 items-center pt-8">
               <img
@@ -68,7 +68,7 @@ const Home = () => {
               </h1>
             </div>
             {/* cards */}
-            <div className="h-full w-full grid sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
+            <div className="h-full w-full grid grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
               {hotels.map((item) => (
                 <>
                   <div
@@ -93,7 +93,7 @@ const Home = () => {
           </div>
 
           {/* things to do */}
-          <div className="h-full w-full flex flex-col px-10">
+          <div className="h-full w-full flex flex-col sm:px-10">
             {/* heading */}
             <div className="flex gap-2 items-center pt-8">
               <img
@@ -106,8 +106,8 @@ const Home = () => {
               </h1>
             </div>
             {/* cards */}
-            <div className="h-full w-full grid sm:grid-cols-2 lg:grid-cols-4 gap-4 py-4">
-              {hotels.map((item) => (
+            <div className="h-full w-full grid grid-cols-2 lg:grid-cols-4 gap-4 py-4">
+              {thingsToDo.map((item) => (
                 <>
                   <div
                     key={item.id}
