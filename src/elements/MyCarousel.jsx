@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // import { homeItems } from "../helper/data";
 import "animate.css";
 
@@ -18,9 +18,16 @@ const MyCarousel = ({ data }) => {
     // }, 500);
   };
 
-  //   setTimeout(() => {
-  //     setItemId()
-  //   }, 5000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (itemId < 5) {
+        setItemId((prev) => prev + 1);
+      } else {
+        setItemId(1);
+      }
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [itemId]);
 
   return (
     <>
@@ -31,7 +38,7 @@ const MyCarousel = ({ data }) => {
           .map((item) => (
             <>
               <div
-                className="h-[75vh] w-full mt-8 shadow-xl relative"
+                className="h-[40vh] sm:h-[55vh] md:h-[70vh] lg:h-[75vh] w-full mt-8 shadow-xl relative transition-all duration-300 ease-in-out"
                 key={item.id}
               >
                 <img
