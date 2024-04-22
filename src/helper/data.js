@@ -3,6 +3,7 @@ import Boudha from "../assets/headerImg2.jpg";
 import Lumbini from "../assets/lumbini.jpg";
 import Dharan from "../assets/Dharan.jpg";
 import Pokhara from "../assets/pokhara.jpg";
+import Chitwan from "../assets/Chitwan.jpg";
 import Hotel1 from "../assets/hotel1.jpg";
 import Hotel2 from "../assets/hotel2.jpg";
 import Hotel3 from "../assets/hotel.jpg";
@@ -135,6 +136,37 @@ export const hotels = [
     name: "Hotel 4",
     price: 150,
     img: Hotel4,
+  },
+];
+
+export const travelPackages = [
+  {
+    id: 1,
+    name: "Boudha",
+    price: 1000,
+    img: Boudha,
+    desc: "Boudha, the heart of Kathmandu’s spiritual life, is an enchanting destination that promises a journey through serenity and tradition",
+  },
+  {
+    id: 2,
+    name: "Pokhara",
+    price: 800,
+    img: Pokhara,
+    desc: "Pokhara, known as the city of lakes and the gateway to the Himalayas, is one of Nepal's most scenic and popular destinations",
+  },
+  {
+    id: 3,
+    name: "Chitwan",
+    price: 1200,
+    img: Chitwan,
+    desc: "Chitwan National Park, Nepal's first national park, is home to rare flora and fauna including the one-horned rhino and Royal Bengal tiger",
+  },
+  {
+    id: 4,
+    name: "Lumbini",
+    price: 500,
+    img: Lumbini,
+    desc: "Lumbini, the birthplace of Lord Buddha, is one of the world's most important spiritual pilgrimage sites and a UNESCO World Heritage Site",
   },
 ];
 

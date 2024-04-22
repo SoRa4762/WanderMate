@@ -20,6 +20,6 @@
   font-family: var(--font-family);
 }
 
-/* .animate__animated .animate__fadeInDown {
+/* .animate__animated.animate__fadeInDown.animate__fadeInUp {
   --animate-duration: 300ms;
 } */
