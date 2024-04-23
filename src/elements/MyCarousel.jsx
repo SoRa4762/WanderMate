@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // import { homeItems } from "../helper/data";
 import "animate.css";
 
@@ -18,9 +18,16 @@ const MyCarousel = ({ data }) => {
     // }, 500);
   };
 
-  //   setTimeout(() => {
-  //     setItemId()
-  //   }, 5000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (itemId < 5) {
+        setItemId((prev) => prev + 1);
+      } else {
+        setItemId(1);
+      }
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [itemId]);
 
   return (
     <>
@@ -31,7 +38,7 @@ const MyCarousel = ({ data }) => {
           .map((item) => (
             <>
               <div
-                className="h-[75vh] w-full mt-8 shadow-xl relative"
+                className="h-[40vh] sm:h-[55vh] md:h-[70vh] lg:h-[75vh] w-full mt-8 shadow-xl relative transition-all ease-in-out duration-300"
                 key={item.id}
               >
                 <img
@@ -47,11 +54,11 @@ const MyCarousel = ({ data }) => {
           ))}
 
         {/* buttons */}
-        <div className="h-full w-full flex justify-center items-center gap-2 md:gap-4 py-8">
+        <div className="h-full w-full flex justify-center items-center gap-2 md:gap-4 py-8 transition-all ease-in-out duration-300">
           {data.map((item) => (
             <>
               <div
-                className={`md:h-4 md:w-4 md:border-[3px] h-2 w-2 border border-orange-600 rounded-full cursor-pointer indent-[-99999px] ${
+                className={`md:h-[0.95rem] md:w-[0.95rem] md:border-[3px] h-2 w-2 border border-orange-600 rounded-full cursor-pointer indent-[-99999px] hover:bg-orange-600 transition-all ease-in-out duration-300 ${
                   itemId == item.id ? "bg-orange-600" : "bg-white"
                 }`}
                 onClick={() => handleItemId(item.id)}
@@ -63,7 +70,7 @@ const MyCarousel = ({ data }) => {
         </div>
 
         {/* desc */}
-        <div className={`h-full w-full p-8 mt-4 shadow-2xl`}>
+        <div className={`h-full w-full p-4 sm:p-8 mt-4 shadow-2xl`}>
           {data
             .filter((item) => item.id === itemId)
             .map((item) => (
