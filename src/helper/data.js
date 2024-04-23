@@ -8,10 +8,10 @@ import Hotel1 from "../assets/hotel1.jpg";
 import Hotel2 from "../assets/hotel2.jpg";
 import Hotel3 from "../assets/hotel.jpg";
 import Hotel4 from "../assets/hotel4.jpg";
-import ttd1 from "../assets/bg.jpg";
-import ttd2 from "../assets/bg3.jpg";
-import ttd3 from "../assets/bg5.jpg";
-import ttd4 from "../assets/bg6.jpg";
+import spa from "../assets/Spa2.jpg";
+import gym from "../assets/Gym.jpg";
+import tennis from "../assets/Tennis3.jpg";
+import swimming from "../assets/Swimming5.jpg";
 
 export const NavCont = [
   {
@@ -115,25 +115,25 @@ export const homeItems = [
 export const hotels = [
   {
     id: 1,
-    name: "Hotel 1",
+    name: "Hotel Yak & Yeti",
     price: 120,
     img: Hotel1,
   },
   {
     id: 2,
-    name: "Hotel 2",
+    name: "Hotel Annapurna",
     price: 100,
     img: Hotel2,
   },
   {
     id: 3,
-    name: "Hotel 3",
+    name: "Hotel Radisson",
     price: 80,
     img: Hotel3,
   },
   {
     id: 4,
-    name: "Hotel 4",
+    name: "Lumbini Garden Retreat",
     price: 150,
     img: Hotel4,
   },
@@ -175,25 +175,25 @@ export const thingsToDo = [
     id: 1,
     name: "Swimming",
     price: 100,
-    img: ttd1,
+    img: swimming,
   },
   {
     id: 2,
     name: "Gym",
     price: 50,
-    img: ttd2,
+    img: gym,
   },
   {
     id: 3,
     name: "Spa",
     price: 150,
-    img: ttd3,
+    img: spa,
   },
   {
     id: 4,
     name: "Tennis Court",
     price: 80,
-    img: ttd4,
+    img: tennis,
   },
 ];
 

@@ -18,6 +18,8 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-family: var(--font-family);
+  /* transition: all ease-in-out 300ms; */
+  /* transition-duration: 300ms; */
 }
 
 /* .animate__animated.animate__fadeInDown.animate__fadeInUp {
