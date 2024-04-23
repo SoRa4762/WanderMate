@@ -12,6 +12,10 @@ import spa from "../assets/Spa2.jpg";
 import gym from "../assets/Gym.jpg";
 import tennis from "../assets/Tennis3.jpg";
 import swimming from "../assets/Swimming5.jpg";
+import dest1 from "../assets/bg2.jpg";
+import dest2 from "../assets/bg7.jpg";
+import dest3 from "../assets/img8.jpg";
+import dest4 from "../assets/img9.jpg";
 
 export const NavCont = [
   {
@@ -136,6 +140,37 @@ export const hotels = [
     name: "Lumbini Garden Retreat",
     price: 150,
     img: Hotel4,
+  },
+];
+
+export const topDestinations = [
+  {
+    id: 1,
+    name: "Kathmandu Durbar Square",
+    price: 500,
+    img: dest1,
+    desc: "Kathmandu Durbar Square is the historic heart of Kathmandu with ancient temples, palaces and courtyards including the old royal palace.",
+  },
+  {
+    id: 2,
+    name: "Phewa Lake",
+    price: 400,
+    img: dest2,
+    desc: "Phewa Lake is a large scenic lake in Pokhara with views of the Annapurna Range and activities like boating and paragliding.",
+  },
+  {
+    id: 3,
+    name: "Chitwan National Park",
+    price: 350,
+    img: dest3,
+    desc: "Chitwan National Park protects rare wildlife like one-horned rhinos, Royal Bengal tigers and Gharial crocodiles.",
+  },
+  {
+    id: 4,
+    name: "Lumbini Sacred Garden",
+    price: 300,
+    img: dest4,
+    desc: "Lumbini Sacred Garden contains ancient Buddhist monasteries, stupas and the exact birthplace of Buddha.",
   },
 ];
 
