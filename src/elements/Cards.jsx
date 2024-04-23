@@ -13,6 +13,7 @@ const Cards = ({ data }) => {
               backgroundSize: "cover",
             }}
           >
+            {/* lg */}
             <div className="h-8 w-8 m-2 rounded-full bg-white flex justify-center items-center">
               <CiHeart size={24} />
             </div>

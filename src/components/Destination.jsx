@@ -23,14 +23,29 @@ const Destination = () => {
             backgroundPosition: "center",
           }}
         >
-          <div className="h-[12%] w-[39%] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] bg-white flex justify-center items-center gap-2 p-4 rounded-lg">
+          <div className="h-[12%] lg:w-[39%] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] bg-white flex justify-center items-center gap-2 p-1 md:p-4 rounded-lg">
             <input
-              className="h-[88%] w-[88%] border-none outline-none"
+              className="h-[90%] w-[80%] lg:w-[90%] border-none outline-none text-xs sm:text-sm md:text-base lg:text-lg"
               placeholder="Search Your Places, Destination..."
               type="text"
             />
-            <div className="h-11 w-11 flex items-center justify-center bg-blue-600 rounded-full">
-              <IoSearch size={22} color="white" />
+            <div className="h-5 w-5 sm:h-7 sm:w-7 md:h-10 md:w-10 lg:h-11 lg:w-11 flex items-center justify-center bg-blue-600 rounded-full cursor-pointer">
+              <IoSearch
+                className="lg:flex xs:hidden hidden"
+                size={22}
+                color="white"
+              />
+              <IoSearch
+                className="md:flex lg:hidden hidden"
+                size={18}
+                color="white"
+              />
+              <IoSearch
+                className="sm:flex md:hidden hidden"
+                size={16}
+                color="white"
+              />
+              <IoSearch className="flex sm:hidden" size={12} color="white" />
             </div>
           </div>
         </div>
