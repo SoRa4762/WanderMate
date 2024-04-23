@@ -7,6 +7,8 @@ import About from "./components/About";
 import Sale from "./components/Sale";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
+import Destination from "./components/Destination";
+import NotFound from "./components/NotFound";
 import Tours from "./components/Tours";
 import TermsConditions from "./components/TermsConditions";
 
@@ -22,8 +24,10 @@ function App() {
           <Route path="/sale" element={<Sale />} />
           <Route path="/tours" element={<Tours />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/destination" element={<Destination />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/termsconditions" element={<TermsConditions />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </>
