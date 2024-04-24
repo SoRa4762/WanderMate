@@ -4,7 +4,7 @@ import { navOverall } from "../../helper/data";
 const NavigationOverall = () => {
   return (
     <>
-      <div className="h-[7vh] w-full flex justify-between items-center font-bold lg:text-xl">
+      <div className="h-[7vh] w-full flex justify-between items-center font-bold lg:text-xl pt-2">
         {/* menu */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +27,7 @@ const NavigationOverall = () => {
             <>
               <li
                 key={index}
-                className="list-none cursor-pointer hover:border-b-4 hover:border-b-blue-600"
+                className="list-none cursor-pointer text-xl hover:border-b-4 hover:border-b-blue-600"
               >
                 <a href={nav.link}>{nav.linkTitle}</a>
               </li>
@@ -36,7 +36,7 @@ const NavigationOverall = () => {
         </div>
 
         {/* user profile */}
-        <div className="h-full flex items-center gap-2">
+        <div className="h-full flex items-center gap-2 cursor-pointer">
           <p>Username</p>
           <img
             className="h-12 w-full rounded-full"

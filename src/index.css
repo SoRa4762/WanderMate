@@ -6,10 +6,22 @@
   --font-family: "Open Sans, Helventica, Arial, sans-serif";
 }
 
+:root {
+  /* changes for global animate.css */
+  --animate-duration: 500ms;
+  /* --animate-delay: 0.9s; */
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-family: var(--font-family);
+  /* transition: all ease-in-out 300ms; */
+  /* transition-duration: 300ms; */
 }
+
+/* .animate__animated.animate__fadeInDown.animate__fadeInUp {
+  --animate-duration: 300ms;
+} */

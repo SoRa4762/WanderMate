@@ -22,3 +22,8 @@ export const signUpSchema = yup.object().shape({
       "You must agree to the terms and conditions before sigining up!"
     ),
 });
+
+export const signInSchema = yup.object().shape({
+  username: yup.string().required("Username cannot be empty"),
+  password: yup.string().required("Password cannot be empty"),
+});
