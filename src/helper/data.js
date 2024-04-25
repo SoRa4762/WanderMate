@@ -70,7 +70,7 @@ export const navOverall = [
   },
   {
     linkTitle: "Travel Packages",
-    link: "/tavelpackages",
+    link: "/travelpackages",
   },
   {
     linkTitle: "Hotels",
