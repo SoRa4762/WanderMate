@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const TravelPackages = () => {
-  return (
-    <div>TravelPackages</div>
-  )
-}
+  return <div>TravelPackages</div>;
+};
 
-export default TravelPackages
+export default TravelPackages;

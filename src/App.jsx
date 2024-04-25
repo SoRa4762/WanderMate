@@ -11,6 +11,7 @@ import Destination from "./components/Destination";
 import NotFound from "./components/NotFound";
 import Tours from "./components/Tours";
 import TermsConditions from "./components/TermsConditions";
+import TravelPackages from "./components/TravelPackages";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/tours" element={<Tours />} />
           <Route path="/home" element={<Home />} />
           <Route path="/destination" element={<Destination />} />
+          <Route path="/travelpackages" element={<TravelPackages />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/termsconditions" element={<TermsConditions />} />
           <Route path="*" element={<NotFound />} />
