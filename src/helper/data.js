@@ -78,6 +78,79 @@ export const navOverall = [
   },
 ];
 
+export const ffAll = [
+  {
+    id: 1,
+    name: "About Us",
+    link: "",
+  },
+  {
+    id: 2,
+    name: "Home",
+    link: "/",
+  },
+  {
+    id: 3,
+    name: "Destinations",
+    link: "/destinations",
+  },
+  {
+    id: 4,
+    name: "Tours",
+    link: "/tours",
+  },
+  {
+    id: 5,
+    name: "Hotels",
+    link: "/hotels",
+  },
+  {
+    id: 6,
+    name: "Flights",
+    link: "/flights",
+  },
+  {
+    id: 7,
+    name: "Car Rentals",
+    link: "/car-rentals",
+  },
+  {
+    id: 8,
+    name: "Activities",
+    link: "/activities",
+  },
+  {
+    id: 9,
+    name: "Deals",
+    link: "/deals",
+  },
+  {
+    id: 10,
+    name: "Blog",
+    link: "/blog",
+  },
+  {
+    id: 11,
+    name: "Contact Us",
+    link: "/contact",
+  },
+  {
+    id: 12,
+    name: "Terms of Service",
+    link: "/tos",
+  },
+  {
+    id: 13,
+    name: "Privacy Policy",
+    link: "/privacy",
+  },
+  {
+    id: 14,
+    name: "Terms and Conditions",
+    link: "/termsconditions",
+  },
+];
+
 export const homeItems = [
   {
     id: 1,
@@ -229,78 +302,5 @@ export const thingsToDo = [
     name: "Tennis Court",
     price: 80,
     img: tennis,
-  },
-];
-
-export const ffAll = [
-  {
-    id: 1,
-    name: "About Us",
-    link: "",
-  },
-  {
-    id: 2,
-    name: "Home",
-    link: "/",
-  },
-  {
-    id: 3,
-    name: "Destinations",
-    link: "/destinations",
-  },
-  {
-    id: 4,
-    name: "Tours",
-    link: "/tours",
-  },
-  {
-    id: 5,
-    name: "Hotels",
-    link: "/hotels",
-  },
-  {
-    id: 6,
-    name: "Flights",
-    link: "/flights",
-  },
-  {
-    id: 7,
-    name: "Car Rentals",
-    link: "/car-rentals",
-  },
-  {
-    id: 8,
-    name: "Activities",
-    link: "/activities",
-  },
-  {
-    id: 9,
-    name: "Deals",
-    link: "/deals",
-  },
-  {
-    id: 10,
-    name: "Blog",
-    link: "/blog",
-  },
-  {
-    id: 11,
-    name: "Contact Us",
-    link: "/contact",
-  },
-  {
-    id: 12,
-    name: "Terms of Service",
-    link: "/tos",
-  },
-  {
-    id: 13,
-    name: "Privacy Policy",
-    link: "/privacy",
-  },
-  {
-    id: 14,
-    name: "Terms and Conditions",
-    link: "/termsconditions",
   },
 ];
