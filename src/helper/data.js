@@ -151,7 +151,7 @@ export const ffAll = [
   },
 ];
 
-export const homeItems = [
+export const destination = [
   {
     id: 1,
     title: "Solukhumbu",
