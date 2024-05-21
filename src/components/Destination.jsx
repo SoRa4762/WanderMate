@@ -1,5 +1,10 @@
 import NavigationOverall from "../elements/Navigation/NavigationOverall";
-import { hotels, travelPackages, thingsToDo, homeItems } from "../helper/data";
+import {
+  hotels,
+  travelPackages,
+  thingsToDo,
+  destination,
+} from "../helper/data";
 import TopHotels from "../assets/bg2.jpg";
 import TopTravelPackage from "../assets/bg5.jpg";
 import ThingsToDo from "../assets/bg.jpg";
@@ -13,7 +18,7 @@ const Destination = () => {
       <div className="px-8 sm:px-12 md:px-16 lg:px-20">
         <NavigationOverall />
         {/* carousel */}
-        <Carousel data={homeItems} />
+        <Carousel data={destination} />
 
         <div className="h-full w-full flex flex-col">
           {/* hotels */}
