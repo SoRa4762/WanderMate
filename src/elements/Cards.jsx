@@ -3,7 +3,7 @@ import { CiHeart } from "react-icons/ci";
 const Cards = ({ data }) => {
   return (
     <div className="h-full w-full grid grid-cols-2 xl:grid-cols-4 gap-4 pt-4">
-      {data.map((item) => (
+      {data?.map((item) => (
         <>
           <div
             key={item.id}
