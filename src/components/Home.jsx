@@ -25,6 +25,8 @@ const Home = () => {
 
   const fetchHotels = async () => {
     const response = await axios.get(`${baseUrl}/hotels`);
+    //tested loading UI functionality for slower APIs
+    // setTimeout(() => setHotels(response.data), 1000);
     setHotels(response.data);
     console.log("this is hotel fetch hotel: ", response.data);
   };
@@ -40,18 +42,23 @@ const Home = () => {
   };
 
   return (
-    //part of debug
+    //part of debug and loading UI functionality test
     // <div>
     //   bla bla bla
     //   <div>
     //     {console.log("This is hotels inside UI: ", hotels)}
-    //     {hotels?.map((hotel) => (
-    //       <>
-    //         <p>{hotel.name}</p>
-    //       </>
-    //     ))}
+    //     {hotels ? (
+    //       hotels.map((hotel) => (
+    //         <>
+    //           <p>{hotel.name}</p>
+    //         </>
+    //       ))
+    //     ) : (
+    //       <p>Loading</p>
+    //     )}
     //   </div>
     // </div>
+
     <>
       <div className="px-8 sm:px-12 md:px-16 lg:px-20">
         <NavigationOverall />
