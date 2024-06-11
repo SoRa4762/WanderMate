@@ -9,7 +9,7 @@ const NotFound = () => {
   }, []);
 
   const calcX = (x) => (x - window.innerWidth / 2) / 20;
-  const calcY = (y) => (y - window.innerHeight / 2) / 20;
+  // const calcY = (y) => (y - window.innerHeight / 2) / 20;
 
   const animatedProps = useSpring({
     x: mousePosition.x,
