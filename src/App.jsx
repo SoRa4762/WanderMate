@@ -12,6 +12,8 @@ import NotFound from "./components/NotFound";
 import Tours from "./components/Tours";
 import TermsConditions from "./components/TermsConditions";
 import TravelPackages from "./components/TravelPackages";
+import Layout from "./dashboard/Layout";
+import Dashboard from "./dashboard/Dashboard";
 
 function App() {
   return (
@@ -29,6 +31,14 @@ function App() {
           <Route path="/travelpackages" element={<TravelPackages />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/termsconditions" element={<TermsConditions />} />
+          <Route path="/admin" element={<Layout />}>
+            <Route path="dashboard" element={<Dashboard />} />
+            {/* <Route path="tours" element={<Tours />} /> */}
+            {/* <Route path="bookings" element={<Bookings />} />
+            <Route path="users" element={<Users />} />
+            <Route path="reviews" element={<Reviews />} />
+            <Route path="settings" element={<Settings />} /> */}
+          </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
