@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useEffect, useState } from "react";
 // import { hotels, travelPackages, topDestinations } from "../helper/data";
+import { fetchHotels, fetchTravelPackages, fetchTopDestinations } from "../api";
 import NavigationOverall from "../elements/Navigation/NavigationOverall";
 import FFAll from "../elements/Footers/FFAll";
 import Cards from "../elements/Cards";
@@ -11,35 +11,30 @@ import bgImg from "../assets/headerImg9.jpg";
 import { IoSearch } from "react-icons/io5";
 
 const Home = () => {
-  const baseUrl = "http://localhost:3000";
   const [hotels, setHotels] = useState();
   const [travelPackages, setTravelPackages] = useState();
   const [topDestinations, setTopDestinations] = useState();
 
   useEffect(() => {
-    fetchHotels();
-    fetchTravelPackages();
-    fetchTopDestinations();
-    console.log("this is hotel useEffect: ", hotels);
+    const getHotels = async () => {
+      const data = await fetchHotels();
+      setHotels(data.slice(0, 4));
+    };
+
+    const getTravelPackages = async () => {
+      const data = await fetchTravelPackages();
+      setTravelPackages(data.slice(0, 4));
+    };
+
+    const getTopDestinations = async () => {
+      const data = await fetchTopDestinations();
+      setTopDestinations(data.slice(0, 4));
+    };
+
+    getHotels();
+    getTravelPackages();
+    getTopDestinations();
   }, []);
-
-  const fetchHotels = async () => {
-    const response = await axios.get(`${baseUrl}/hotels`);
-    //tested loading UI functionality for slower APIs
-    // setTimeout(() => setHotels(response.data), 1000);
-    setHotels(response.data);
-    console.log("this is hotel fetch hotel: ", response.data);
-  };
-
-  const fetchTravelPackages = async () => {
-    const response = await axios.get(`${baseUrl}/travelPackages`);
-    setTravelPackages(response.data);
-  };
-
-  const fetchTopDestinations = async () => {
-    const response = await axios.get(`${baseUrl}/topDestinations`);
-    setTopDestinations(response.data);
-  };
 
   return (
     //part of debug and loading UI functionality test
