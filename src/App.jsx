@@ -15,6 +15,7 @@ import TravelPackages from "./components/TravelPackages";
 import Layout from "./dashboard/Layout";
 import Dashboard from "./dashboard/Dashboard";
 import Hotels from "./components/Hotels";
+import Hotel from "./components/Hotel";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/destination" element={<Destination />} />
           <Route path="/travelpackages" element={<TravelPackages />} />
           <Route path="/hotels" element={<Hotels />} />
+          <Route path="/hotels/:id" element={<Hotel />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/termsconditions" element={<TermsConditions />} />
           <Route path="/admin" element={<Layout />}>

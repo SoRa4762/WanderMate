@@ -48,25 +48,64 @@
       "id": "1",
       "name": "Hotel Yak & Yeti",
       "price": 120,
-      "img": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/tv5jbv6wn68crhqdjm1b"
+      "img": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/tv5jbv6wn68crhqdjm1b",
+      "rating": 5,
+      "freeCancellation": true,
+      "reserveNow": true
     },
     {
       "id": "2",
       "name": "Hotel Annapurna",
       "price": 100,
-      "img": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/zgpubhnmahhywx21t1j2"
+      "img": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/zgpubhnmahhywx21t1j2",
+      "rating": 5,
+      "freeCancellation": true,
+      "reserveNow": true
     },
     {
       "id": "3",
       "name": "Hotel Radisson",
       "price": 80,
-      "img": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/ymdp7tcjizdaoiiytyio"
+      "img": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/ymdp7tcjizdaoiiytyio",
+      "rating": 5,
+      "freeCancellation": true,
+      "reserveNow": true
     },
     {
       "id": "4",
       "name": "Lumbini Garden Retreat",
       "price": 150,
-      "img": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/snng9ztpxqockoxj4v7n"
+      "img": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/snng9ztpxqockoxj4v7n",
+      "rating": 5,
+      "freeCancellation": true,
+      "reserveNow": true
+    },
+    {
+      "id": "5",
+      "name": "Hyatt Regency",
+      "price": 180,
+      "img": "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/6608967321245190-d9dabdf82d2611eabcfc0242ac110003.jpg",
+      "rating": 4,
+      "freeCancellation": true,
+      "reserveNow": true
+    },
+    {
+      "id": "6",
+      "name": "Marriott Hotel",
+      "price": 200,
+      "img": "https://royalcollege.edu.np/wp-content/uploads/2020/04/HQ5A8705_20190611131701.jpg",
+      "rating": 5,
+      "freeCancellation": false,
+      "reserveNow": true
+    },
+    {
+      "id": "7",
+      "name": "Soaltee Crowne Plaza",
+      "price": 160,
+      "img": "https://lh4.googleusercontent.com/proxy/cguEeVMN81BkYeeUl8EpVCzts4PTtUcx1H2TSsw-5hzcHhYY3-DvdZviVpr3GrzSLAE4cG7qNqE",
+      "rating": 4,
+      "freeCancellation": true,
+      "reserveNow": false
     }
   ],
   "topDestinations": [
