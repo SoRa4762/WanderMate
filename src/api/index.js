@@ -13,9 +13,9 @@ export const fetchHotels = async () => {
   }
 };
 
-export const fetchHotel = async (hotel) => {
+export const fetchHotel = async (hotelId) => {
   try {
-    const response = await axios.get(`${baseUrl}/hotels/${hotel}`);
+    const response = await axios.get(`${baseUrl}/hotels/${hotelId}`);
     const data = await response.data;
     return data;
   } catch (error) {
