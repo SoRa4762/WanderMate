@@ -24,7 +24,7 @@ const HCard = ({ data }) => {
               <div className="flex flex-col text-center gap-2">
                 <p>$ {item.price}</p>
                 <Link
-                  to={`/hotels/${item.id}`}
+                  to={`/hotel/${item.id}`}
                   className="bg-blue-600 hover:bg-blue-800 text-white px-8 py-1 rounded-md font-medium"
                 >
                   View Deal
