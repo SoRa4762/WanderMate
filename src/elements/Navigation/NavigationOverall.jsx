@@ -27,7 +27,7 @@ const NavigationOverall = () => {
             <>
               <li
                 key={index}
-                className="list-none cursor-pointer text-xl hover:border-b-4 hover:border-b-blue-600"
+                className="list-none cursor-pointer lg:text-xl hover:border-b-4 hover:border-b-blue-600"
               >
                 <a href={nav.link}>{nav.linkTitle}</a>
               </li>
@@ -36,14 +36,17 @@ const NavigationOverall = () => {
         </div>
 
         {/* user profile */}
-        <div className="h-full flex items-center gap-2 cursor-pointer">
+        <a
+          href="/user/1"
+          className="h-full flex items-center gap-2 cursor-pointer"
+        >
           <p>Username</p>
           <img
             className="h-12 w-full rounded-full"
             src={userProfile}
             alt="userProfile"
           />
-        </div>
+        </a>
       </div>
     </>
   );

@@ -304,3 +304,21 @@ export const thingsToDo = [
     img: tennis,
   },
 ];
+
+export const hotelDetails = [
+  {
+    id: 1,
+    name: "About",
+    to: "#about",
+  },
+  {
+    id: 2,
+    name: "Location",
+    to: "#location",
+  },
+  {
+    id: 1,
+    name: "Reviews",
+    to: "#reviews",
+  },
+];
