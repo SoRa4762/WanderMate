@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import FFAll from "../elements/Footers/FFAll";
-import NavigationOverall from "../elements/Navigation/NavigationOverall";
-import { fetchHotels } from "../api";
-import HCard from "../elements/HCard";
+import FFAll from "../../elements/Footers/FFAll";
+import NavigationOverall from "../../elements/Navigation/NavigationOverall";
+import { fetchHotels } from "../../api";
+import HCard from "../../elements/HCard";
 
 const Hotels = () => {
   const [hotels, setHotels] = useState();

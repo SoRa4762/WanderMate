@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { fetchHotel } from "../api";
-import NavigationOverall from "../elements/Navigation/NavigationOverall";
-import FFAll from "../elements/Footers/FFAll";
-import { hotelDetails } from "../helper/data";
+import { fetchHotel } from "../../api";
+import NavigationOverall from "../../elements/Navigation/NavigationOverall";
+import FFAll from "../../elements/Footers/FFAll";
+import { hotelDetails } from "../../helper/data";
 
 const Hotel = () => {
   const { id } = useParams();

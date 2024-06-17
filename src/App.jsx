@@ -1,21 +1,21 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Landing from "./components/Landing";
-import SignIn from "./components/SignIn";
-import SignUp from "./components/SignUp";
+import SignIn from "./components/Auth/SignIn";
+import SignUp from "./components/Auth/SignUp";
 import About from "./components/About";
 import Sale from "./components/Sale";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
-import Destination from "./components/Destination";
+import Destination from "./components/Destination/Destination";
 import NotFound from "./components/NotFound";
 import Tours from "./components/Tours";
 import TermsConditions from "./components/TermsConditions";
-import TravelPackages from "./components/TravelPackages";
+import TravelPackages from "./components/Travel Packages/TravelPackages";
 import Layout from "./dashboard/Layout";
 import Dashboard from "./dashboard/Dashboard";
-import Hotels from "./components/Hotels";
-import Hotel from "./components/Hotel";
+import Hotels from "./components/Hotels/Hotels";
+import Hotel from "./components/Hotels/Hotel";
 import UserProfile from "./pages/UserProfile";
 
 function App() {
