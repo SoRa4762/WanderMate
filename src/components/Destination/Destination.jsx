@@ -1,16 +1,16 @@
-import NavigationOverall from "../elements/Navigation/NavigationOverall";
+import NavigationOverall from "../../elements/Navigation/NavigationOverall";
 import {
   hotels,
   travelPackages,
   thingsToDo,
   destination,
-} from "../helper/data";
-import TopHotels from "../assets/bg2.jpg";
-import TopTravelPackage from "../assets/bg5.jpg";
-import ThingsToDo from "../assets/bg.jpg";
-import Carousel from "../elements/MyCarousel";
-import FFAll from "../elements/Footers/FFAll";
-import Cards from "../elements/Cards";
+} from "../../helper/data";
+import TopHotels from "../../assets/bg2.jpg";
+import TopTravelPackage from "../../assets/bg5.jpg";
+import ThingsToDo from "../../assets/bg.jpg";
+import Carousel from "../../elements/MyCarousel";
+import FFAll from "../../elements/Footers/FFAll";
+import Cards from "../../elements/Cards";
 
 const Destination = () => {
   return (

@@ -15,6 +15,11 @@ const Home = () => {
   const [travelPackages, setTravelPackages] = useState();
   const [topDestinations, setTopDestinations] = useState();
 
+  //url for cards
+  const hotelUrl = "/hotel";
+  const destinationUrl = "/destination";
+  const packageUrl = "/package";
+
   useEffect(() => {
     const getHotels = async () => {
       const data = await fetchHotels();
@@ -109,7 +114,7 @@ const Home = () => {
               </h1>
             </div>
             {/* cards */}
-            <Cards data={topDestinations} />
+            <Cards data={topDestinations} url={destinationUrl} />
           </div>
 
           {/* hotels */}
@@ -126,7 +131,7 @@ const Home = () => {
               </h1>
             </div>
             {/* cards */}
-            <Cards data={hotels} />
+            <Cards data={hotels} url={hotelUrl} />
           </div>
 
           {/* top travel packages */}
@@ -143,7 +148,7 @@ const Home = () => {
               </h1>
             </div>
             {/* cards */}
-            <Cards data={travelPackages} />
+            <Cards data={travelPackages} url={packageUrl} />
           </div>
           <FFAll />
         </div>

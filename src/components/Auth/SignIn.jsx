@@ -1,8 +1,8 @@
 // import { useState } from "react";
-import SignInImage from "../assets/undraw_signin.svg";
+import SignInImage from "../../assets/undraw_signin.svg";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { signInSchema } from "../Validations/userValidation";
+import { signInSchema } from "../../Validations/userValidation";
 
 const SignIn = () => {
   // const [signInValues, setSignInValues] = useState({});
