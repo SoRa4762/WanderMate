@@ -21,7 +21,9 @@ const NavigationOverall = () => {
           />
         </svg>
 
-        <h1 className="hidden md:flex text-blue-600">WanderMate</h1>
+        <a href="/home" className="hidden md:flex text-blue-600">
+          WanderMate
+        </a>
         <div className="hidden md:flex md:gap-4 lg:gap-8 items-center">
           {navOverall.map((nav, index) => (
             <>

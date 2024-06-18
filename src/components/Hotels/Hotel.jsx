@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { fetchHotel } from "../../api";
+import { fetchHotel, fetchReviews } from "../../api";
 import NavigationOverall from "../../elements/Navigation/NavigationOverall";
 import FFAll from "../../elements/Footers/FFAll";
 import { hotelDetails } from "../../helper/data";
 import Map from "../Map/Map";
+import StarRating from "../../elements/StarRating";
 
 const Hotel = () => {
   const { id } = useParams();
   const [hotel, setHotel] = useState(null);
+  const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     const getHotel = async () => {
@@ -16,7 +18,13 @@ const Hotel = () => {
       setHotel(data);
     };
 
+    const getReviews = async () => {
+      const data = await fetchReviews(id);
+      setReviews(data);
+    };
+
     getHotel();
+    getReviews();
   }, [id]);
 
   //loading animation alternative
@@ -33,37 +41,37 @@ const Hotel = () => {
         ) : (
           <div className="h-full w-full">
             {/* 5 images section */}
-            <div className="h-[40vh] relative sm:h-[55vh] md:h-[70vh] lg:h-[75vh] flex gap-4 mt-8 w-full transition-all duration-300 ease-in-out rounded-lg">
+            <div className="h-[40vh] sm:h-[55vh] md:h-[70vh] lg:h-[75vh] flex gap-4 mt-8 w-full transition-all duration-300 ease-in-out rounded-lg">
               {/* 1 image: slice one image */}
-              <div className="h-full w-full lg:w-[60%] shadow-xl">
+              <div className="h-full w-full lg:w-[60%] rounded-lg shadow-xl cursor-pointer">
                 <img
                   className="h-full w-full object-cover rounded-lg"
-                  src="https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/tv5jbv6wn68crhqdjm1b"
-                  alt=""
+                  src={hotel.img}
+                  alt={hotel.name}
                 />
               </div>
               {/* 4 images: slice 4 images and map them */}
-              <div className="hidden lg:flex h-full w-[40%] shadow-xl">
-                <div className="lg:grid h-full w-full grid-cols-2 gap-2">
+              <div className="hidden lg:flex h-full w-[40%] shadow-xl rounded-lg">
+                <div className="lg:grid h-full w-full grid-cols-2 grid-rows-2 gap-2">
                   <img
-                    className="h-full w-full object-cover rounded-lg"
-                    src="https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/tv5jbv6wn68crhqdjm1b"
-                    alt=""
+                    className="h-full w-full object-cover rounded-lg cursor-pointer"
+                    src={hotel.img}
+                    alt={hotel.name}
                   />
                   <img
-                    className="h-full w-full object-cover rounded-lg"
-                    src="https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/tv5jbv6wn68crhqdjm1b"
-                    alt=""
+                    className="h-full w-full object-cover rounded-lg cursor-pointer"
+                    src={hotel.img}
+                    alt={hotel.name}
                   />
                   <img
-                    className="h-full w-full object-cover rounded-lg"
-                    src="https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/tv5jbv6wn68crhqdjm1b"
-                    alt=""
+                    className="h-full w-full object-cover rounded-lg cursor-pointer"
+                    src={hotel.img}
+                    alt={hotel.name}
                   />
                   <img
-                    className="h-full w-full object-cover rounded-lg"
-                    src="https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/tv5jbv6wn68crhqdjm1b"
-                    alt=""
+                    className="h-full w-full object-cover rounded-lg cursor-pointer"
+                    src={hotel.img}
+                    alt={hotel.name}
                   />
                 </div>
               </div>
@@ -107,8 +115,31 @@ const Hotel = () => {
                 <Map />
               </div>
               {/* details section - reviews */}
-              <div className="h-full w-full " id="reviews">
-                <p>FYP comment section copy paste? sure!</p>
+              <div className="h-full w-full shadow-lg" id="reviews">
+                {!reviews ? (
+                  <p className="font-bold text-xl">No Reviews Yet</p>
+                ) : (
+                  reviews.map((review) => (
+                    <>
+                      <div className="h-20vh w-full flex flex-col p-8 gap-2">
+                        <div className="h-full w-full flex items-center gap-4">
+                          <img
+                            src={review.userImage}
+                            alt={review.user}
+                            className="h-12 w-12 rounded-full object-cover"
+                          />
+                          <p className="font-bold text-xl">userName</p>
+                          <StarRating rating={review.rating} />
+                        </div>
+                        <p className="font-medium text-md">{review.comment}</p>
+                        <p className="font-bold text-md">{review.date}</p>
+                        <div className="flex justify-center pt-4">
+                          <hr className="border-b-1 border-gray-500 w-[80%]" />
+                        </div>
+                      </div>
+                    </>
+                  ))
+                )}
               </div>
             </div>
           </div>

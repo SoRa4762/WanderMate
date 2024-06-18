@@ -69,7 +69,7 @@
       "name": "Hotel Radisson",
       "price": 80,
       "img": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/ymdp7tcjizdaoiiytyio",
-      "rating": 5,
+      "rating": 3,
       "freeCancellation": true,
       "reserveNow": true,
       "desc": "Hotel Radisson is a modern and stylish 5-star hotel located in the heart of Kathmandu, offering exceptional service and a range of amenities. The hotel features contemporary and well-appointed rooms with modern amenities, ensuring a comfortable and luxurious stay for guests. Guests can indulge in a variety of dining options, from international cuisine to local Nepali delicacies, catering to diverse tastes. The hotel also boasts a state-of-the-art fitness center, a relaxing spa, and a rooftop pool with stunning city views, providing guests with ample opportunities for relaxation and rejuvenation."
@@ -199,6 +199,72 @@
       "name": "Tennis Court",
       "price": 80,
       "img": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/rfll5mj7au6pg2pjfxem"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "hotelId": "1",
+      "rating": 5,
+      "comment": "Great place to stay",
+      "user": "User name",
+      "date": "2020-01-01",
+      "userImage": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/juzdfyafpfijrb8nhkfa"
+    },
+    {
+      "id": "2",
+      "hotelId": "3",
+      "rating": 5,
+      "comment": "Great place to stay",
+      "user": "User name",
+      "date": "2020-01-01",
+      "userImage": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/juzdfyafpfijrb8nhkfa"
+    },
+    {
+      "id": "3",
+      "hotelId": "2",
+      "rating": 5,
+      "comment": "Great place to stay",
+      "user": "User name",
+      "date": "2020-01-01",
+      "userImage": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/juzdfyafpfijrb8nhkfa"
+    },
+    {
+      "id": "4",
+      "hotelId": "1",
+      "rating": 5,
+      "comment": "Great place to stay",
+      "user": "User name",
+      "date": "2020-01-01",
+      "userImage": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/juzdfyafpfijrb8nhkfa"
+    },
+    {
+      "id": "5",
+      "hotelId": "1",
+      "rating": 5,
+      "comment": "Great place to stay",
+      "user": "User name",
+      "date": "2020-01-01",
+      "userImage": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/juzdfyafpfijrb8nhkfa"
+    },
+    {
+      "id": "6",
+      "hotelId": "1",
+      "rating": 5,
+      "comment": "Great place to stay",
+      "user": "User name",
+      "date": "2020-01-01",
+      "userImage": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/juzdfyafpfijrb8nhkfa"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "User name",
+      "email": "user@gmail.com",
+      "password": "passuuserUwU",
+      "image": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/juzdfyafpfijrb8nhkfa",
+      "coverImage": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/whwvm1jz6ghze3gdfbsu"
     }
   ]
 }

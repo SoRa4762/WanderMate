@@ -16,7 +16,7 @@ import Layout from "./dashboard/Layout";
 import Dashboard from "./dashboard/Dashboard";
 import Hotels from "./components/Hotels/Hotels";
 import Hotel from "./components/Hotels/Hotel";
-import UserProfile from "./pages/UserProfile";
+import UserProfile from "./components/User/UserProfile";
 
 function App() {
   return (
