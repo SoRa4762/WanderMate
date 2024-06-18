@@ -19,11 +19,11 @@ const Sidebar = () => {
           Dashboard
         </NavLink>
         <NavLink
-          to="/tours"
+          to="/admin/managehotels"
           className="block py-2.5 px-4 rounded hover:bg-gray-700"
           activeClassName="bg-gray-700"
         >
-          Tours
+          Hotels
         </NavLink>
         <NavLink
           to="/bookings"
