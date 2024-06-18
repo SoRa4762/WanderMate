@@ -3,8 +3,8 @@ const StarRating = ({ rating }) => {
 
   const renderStars = () => {
     let stars = [];
-    for (let i = 1; i <= totalStars; i++) {
-      if (i <= rating) {
+    for (let i = 0; i < totalStars; i++) {
+      if (rating > i) {
         stars.push(
           <span key={i} className="font-normal text-yellow-400">
             &#9733;
