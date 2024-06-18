@@ -4,6 +4,7 @@ import { fetchHotel } from "../../api";
 import NavigationOverall from "../../elements/Navigation/NavigationOverall";
 import FFAll from "../../elements/Footers/FFAll";
 import { hotelDetails } from "../../helper/data";
+import Map from "../Map/Map";
 
 const Hotel = () => {
   const { id } = useParams();
@@ -71,7 +72,7 @@ const Hotel = () => {
             {/* details section */}
             <div className="h-full w-full">
               {/* details section - nav */}
-              <div className="h-16 flex gap-4 items-center flex-wrap">
+              <div className="h-16 flex gap-4 px-4 items-center flex-wrap">
                 {hotelDetails.map((item) => (
                   <>
                     <li
@@ -85,13 +86,25 @@ const Hotel = () => {
               </div>
 
               {/* details section - about */}
-              <div className="h-full w-1/2 flex flex-col" id="about">
-                <p className="font-bold lg:text-4xl">{hotel.rating}</p>
-                <p>{hotel.desc}</p>
+              <div
+                className="h-full w-full p-4 flex flex-col sm:flex-row shadow-md rounded-lg"
+                id="about"
+              >
+                <div className="flex sm:flex-[2] flex-col">
+                  <p className="font-bold text-2xl sm:text-3xl lg:text-4xl">
+                    {hotel.rating}
+                  </p>
+                  <p>{hotel.desc}</p>
+                </div>
+                <div className="flex sm:flex-1 flex-col justify-center items-center">
+                  <button className="py-1 px-8 mt-4 sm:mt-0 bg-blue-500 hover:bg-blue-700 text-white font-semibold rounded-md">
+                    Book Now
+                  </button>
+                </div>
               </div>
               {/* details section - location */}
-              <div className="h-full w-full " id="location">
-                <p className="text-4xl">Google API coming soon</p>
+              <div className="h-[60vh] w-full my-8 rounded-md" id="location">
+                <Map />
               </div>
               {/* details section - reviews */}
               <div className="h-full w-full " id="reviews">
