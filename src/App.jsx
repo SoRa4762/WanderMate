@@ -9,7 +9,6 @@ import Contact from "./components/Contact";
 import Home from "./components/Home";
 import Destination from "./components/Destination/Destination";
 import NotFound from "./components/NotFound";
-import Tours from "./components/Tours";
 import TermsConditions from "./components/TermsConditions";
 import TravelPackages from "./components/Travel Packages/TravelPackages";
 import Layout from "./dashboard/Layout";
@@ -17,6 +16,9 @@ import Dashboard from "./dashboard/Dashboard";
 import Hotels from "./components/Hotels/Hotels";
 import Hotel from "./components/Hotels/Hotel";
 import UserProfile from "./components/User/UserProfile";
+import Tours from "./components/Tours";
+import HotelManagement from "./dashboard/HotelManagement";
+import Bookings from "./dashboard/Bookings";
 
 function App() {
   return (
@@ -39,9 +41,9 @@ function App() {
           <Route path="/termsconditions" element={<TermsConditions />} />
           <Route path="/admin" element={<Layout />}>
             <Route path="dashboard" element={<Dashboard />} />
-            {/* <Route path="tours" element={<Tours />} /> */}
-            {/* <Route path="bookings" element={<Bookings />} />
-            <Route path="users" element={<Users />} />
+            <Route path="manage-hotels" element={<HotelManagement />} />
+            <Route path="manage-bookings" element={<Bookings />} />
+            {/* <Route path="users" element={<Users />} />
             <Route path="reviews" element={<Reviews />} />
             <Route path="settings" element={<Settings />} /> */}
           </Route>
