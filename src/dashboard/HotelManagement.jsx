@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { fetchHotels } from "../api";
 
 const initialHotels = [
   {
@@ -21,7 +22,7 @@ const initialHotels = [
 ];
 
 const HotelManagement = () => {
-  const [hotels, setHotels] = useState(initialHotels);
+  const [hotels, setHotels] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
   const [currentHotel, setCurrentHotel] = useState(null);
 
@@ -32,40 +33,45 @@ const HotelManagement = () => {
   const [reserveNow, setReserveNow] = useState(false);
   const [description, setDescription] = useState("");
 
+  useEffect(() => {
+    const getHotels = async () => {
+      const response = await fetchHotels();
+      setHotels(response);
+    };
+
+    getHotels();
+  }, []);
+
   const handleImageChange = (e) => {
-    setImages([...e.target.files]);
+    const selectedFiles = Array.from(e.target.files);
+    setImages((prevImages) => [...prevImages, ...selectedFiles]);
+  };
+
+  const handleRemoveImage = (index) => {
+    setImages((prevImages) => prevImages.filter((_, i) => i !== index));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const hotelData = {
+      id: isEditing ? currentHotel.id : hotels.length + 1,
+      name,
+      price,
+      freeCancellation,
+      reserveNow,
+      description,
+      images,
+    };
+
     if (isEditing) {
       setHotels(
         hotels.map((hotel) =>
-          hotel.id === currentHotel.id
-            ? {
-                ...currentHotel,
-                name,
-                price,
-                freeCancellation,
-                reserveNow,
-                description,
-              }
-            : hotel
+          hotel.id === currentHotel.id ? hotelData : hotel
         )
       );
       setIsEditing(false);
     } else {
-      setHotels([
-        ...hotels,
-        {
-          id: hotels.length + 1,
-          name,
-          price,
-          freeCancellation,
-          reserveNow,
-          description,
-        },
-      ]);
+      setHotels([...hotels, hotelData]);
     }
     resetForm();
   };
@@ -76,7 +82,8 @@ const HotelManagement = () => {
     setPrice(hotel.price);
     setFreeCancellation(hotel.freeCancellation);
     setReserveNow(hotel.reserveNow);
-    setDescription(hotel.description);
+    setDescription(hotel.desc);
+    setImages(hotel.images || []);
     setIsEditing(true);
   };
 
@@ -130,6 +137,24 @@ const HotelManagement = () => {
               className="w-full p-2 border rounded"
               required
             />
+          </div>
+          <div className="mb-4 flex flex-wrap gap-2">
+            {images.map((image, index) => (
+              <div key={index} className="relative">
+                <img
+                  src={URL.createObjectURL(image)}
+                  alt={`preview-${index}`}
+                  className="h-24 w-24 object-cover rounded"
+                />
+                <button
+                  type="button"
+                  onClick={() => handleRemoveImage(index)}
+                  className="absolute top-0 right-0 bg-red-500 text-white p-1 rounded-full"
+                >
+                  &times;
+                </button>
+              </div>
+            ))}
           </div>
           <div className="mb-4">
             <label className="block text-gray-700">Free Cancellation</label>

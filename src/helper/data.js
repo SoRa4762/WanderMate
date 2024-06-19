@@ -322,3 +322,31 @@ export const hotelDetails = [
     to: "#reviews",
   },
 ];
+
+export const adminSidebar = [
+  {
+    id: 1,
+    to: "/admin/dashboard",
+    name: "Dashboard",
+  },
+  {
+    id: 2,
+    to: "/admin/manage-hotels",
+    name: "Hotels",
+  },
+  {
+    id: 3,
+    to: "/admin/manage-destinations",
+    name: "Destinations",
+  },
+  {
+    id: 4,
+    to: "/admin/manage-bookings",
+    name: "Bookings",
+  },
+  {
+    id: 5,
+    to: "/admin/manage-reviews",
+    name: "Reviews",
+  },
+];

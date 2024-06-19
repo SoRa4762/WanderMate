@@ -3,7 +3,7 @@ import MainPanel from "../dashboard/MainPanel";
 
 const Layout = () => {
   return (
-    <div className="flex h-screen">
+    <div className="flex h-full w-full">
       <Sidebar />
       <MainPanel />
     </div>
