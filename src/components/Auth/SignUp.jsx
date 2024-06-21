@@ -1,12 +1,10 @@
-// import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import axios from 'axios'; // Import Axios for HTTP requests
 import SignUpImage from "../../assets/undraw_signup.svg";
 import { signUpSchema } from "../../Validations/userValidation";
 
 const SignUp = () => {
-  // const [signUpValues, setSignUpValues] = useState({});
-
   const {
     register,
     handleSubmit,
@@ -15,53 +13,35 @@ const SignUp = () => {
     resolver: yupResolver(signUpSchema),
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    try {
+      // Ensure password and confirmPassword match
+      if (data.password !== data.confirmPassword) {
+        // Handle password mismatch error (if needed)
+        console.error('Password and Confirm Password do not match');
+        return;
+      }
+
+      // Send form data to the backend
+      const response = await axios.post('http://localhost:5218/api/account/register', {
+        username: data.username,
+        email: data.email,
+        password: data.password,
+      });
+
+      console.log('Form submitted successfully:', response.data);
+
+      // Optionally, clear the form or show a success message
+    } catch (error) {
+      console.error('Error submitting the form:', error);
+      // Handle errors such as network error, backend error, etc.
+    }
   };
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   let formData = {
-  //     username: e.target[0].value,
-  //     email: e.target[1].value,
-  //     password: e.target[2].value,
-  //   };
-
-  //   await console.log(formData);
-  //   const isValid = await signUpSchema.isValid(formData);
-  //   console.log(isValid);
-  // };
-
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setSignUpValues((prevData) => ({
-  //     ...prevData,
-  //     [name]: value,
-  //   }));
-
-  //   console.log("Sign Up Values: ", signUpValues);
-  // };
-
-  //for submit
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-
-  //   const userName = e.target[0].value;
-  //   const email = e.target[1].value;
-  //   const password = e.target[2].value;
-  //   const confirmPassword = e.target[3].value;
-  //   const iAgree = e.target[4].value;
-
-  //   await console.log(userName, email, password, confirmPassword, iAgree);
-  // };
 
   return (
     <>
       <div className="h-[100vh] w-full sm:p-12 md:pl-20 md:pr-20 lg:pl-32 lg:pr-32">
-        <div
-          className="h-full w-full grid grid-cols-1 md:grid-cols-2 rounded-md"
-          style={{ boxShadow: "20px 20px 20px #DEDEDE" }}
-        >
+        <div className="h-full w-full grid grid-cols-1 md:grid-cols-2 rounded-md" style={{ boxShadow: "20px 20px 20px #DEDEDE" }}>
           {/* sign up form */}
           <form
             onSubmit={handleSubmit(onSubmit)}
@@ -78,7 +58,6 @@ const SignUp = () => {
                 placeholder="Username"
                 name="username"
                 id="username"
-                // onChange={handleChange}
                 {...register("username")}
               />
               <p className="text-xs lg:text-sm text-red-600 font-semibold pt-1">
@@ -93,7 +72,6 @@ const SignUp = () => {
                 placeholder="Email"
                 name="email"
                 id="email"
-                // onChange={handleChange}
                 {...register("email")}
               />
               <p className="text-xs lg:text-sm text-red-600 font-semibold pt-1">
@@ -101,7 +79,6 @@ const SignUp = () => {
               </p>
             </div>
 
-            {/*if you add eye button, make sure to turn the type to text and back */}
             <div className="w-full">
               <input
                 className="h-10 md:h-14 pl-4 w-full border-2 border-blue-600 rounded-md focus:border-blue-600"
@@ -109,7 +86,6 @@ const SignUp = () => {
                 placeholder="Password"
                 name="password"
                 id="password"
-                // onChange={handleChange}
                 {...register("password")}
               />
               <p className="text-xs lg:text-sm text-red-600 font-semibold pt-1">
@@ -124,7 +100,6 @@ const SignUp = () => {
                 placeholder="Confirm Password"
                 name="confirmPassword"
                 id="confirmPassword"
-                // onChange={handleChange}
                 {...register("confirmPassword")}
               />
               <p className="text-xs lg:text-sm text-red-600 font-semibold pt-1">
@@ -145,7 +120,6 @@ const SignUp = () => {
                   type="checkbox"
                   name="condition"
                   id="condition"
-                  // onChange={handleChange}
                   {...register("iAgree")}
                 />
                 <p>
