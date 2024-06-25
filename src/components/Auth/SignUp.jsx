@@ -1,10 +1,12 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import axios from 'axios'; // Import Axios for HTTP requests
+import axios from "axios"; // Import Axios for HTTP requests
 import SignUpImage from "../../assets/undraw_signup.svg";
 import { signUpSchema } from "../../Validations/userValidation";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -14,26 +16,31 @@ const SignUp = () => {
   });
 
   const onSubmit = async (data) => {
+    console.log(data);
+
     try {
-      // Ensure password and confirmPassword match
-      if (data.password !== data.confirmPassword) {
-        // Handle password mismatch error (if needed)
-        console.error('Password and Confirm Password do not match');
-        return;
-      }
-
       // Send form data to the backend
-      const response = await axios.post('http://localhost:5218/api/account/register', {
-        username: data.username,
-        email: data.email,
-        password: data.password,
-      });
+      const response = await axios.post(
+        "http://localhost:5218/api/account/register",
+        {
+          username: data.username,
+          email: data.email,
+          password: data.password,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
-      console.log('Form submitted successfully:', response.data);
+      console.log("Form submitted successfully:", response.data);
+
+      navigate("/signin");
 
       // Optionally, clear the form or show a success message
     } catch (error) {
-      console.error('Error submitting the form:', error);
+      console.error("Error submitting the form:", error);
       // Handle errors such as network error, backend error, etc.
     }
   };
@@ -41,7 +48,10 @@ const SignUp = () => {
   return (
     <>
       <div className="h-[100vh] w-full sm:p-12 md:pl-20 md:pr-20 lg:pl-32 lg:pr-32">
-        <div className="h-full w-full grid grid-cols-1 md:grid-cols-2 rounded-md" style={{ boxShadow: "20px 20px 20px #DEDEDE" }}>
+        <div
+          className="h-full w-full grid grid-cols-1 md:grid-cols-2 rounded-md"
+          style={{ boxShadow: "20px 20px 20px #DEDEDE" }}
+        >
           {/* sign up form */}
           <form
             onSubmit={handleSubmit(onSubmit)}
