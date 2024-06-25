@@ -40,6 +40,7 @@ const Bookings = () => {
           selectsStart
           startDate={startDate}
           endDate={endDate}
+          minDate={Date.now()}
           className="w-full p-2 border rounded"
         />
       </div>
@@ -51,7 +52,7 @@ const Bookings = () => {
           selectsEnd
           startDate={startDate}
           endDate={endDate}
-          minDate={startDate}
+          minDate={startDate ? startDate : Date.now()}
           className="w-full p-2 border rounded"
         />
       </div>
