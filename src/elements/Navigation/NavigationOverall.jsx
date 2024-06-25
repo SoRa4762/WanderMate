@@ -44,7 +44,7 @@ const NavigationOverall = () => {
         >
           <p>Username</p>
           <img
-            className="h-12 w-full rounded-full"
+            className="h-12 w-12 rounded-full"
             src={userProfile}
             alt="userProfile"
           />
