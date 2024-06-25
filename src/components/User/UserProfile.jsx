@@ -11,6 +11,7 @@ const UserProfile = () => {
     const getUser = async () => {
       const userData = await fetchUser(id);
       setUser(userData);
+      console.log(userData);
     };
 
     getUser();
