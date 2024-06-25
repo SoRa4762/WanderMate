@@ -3,6 +3,8 @@ import SignInImage from "../../assets/undraw_signin.svg";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { signInSchema } from "../../Validations/userValidation";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
   // const [signInValues, setSignInValues] = useState({});
@@ -25,6 +27,8 @@ const SignIn = () => {
   //   await console.log(email, password, rememberMe);
   // };
 
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -34,8 +38,22 @@ const SignIn = () => {
   });
 
   //onSubmit
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    try {
+      const response = await axios.post(
+        "http://localhost:5218/api/account/login",
+        {
+          username: data.username,
+          password: data.password,
+        }
+      );
+
+      console.log(response.data);
+
+      navigate("/home");
+    } catch (err) {
+      console.log("There was an error signing in: " + err);
+    }
   };
 
   return (
