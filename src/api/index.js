@@ -43,6 +43,16 @@ export const fetchTopDestinations = async () => {
   }
 };
 
+export const fetchThingsToDo = async () => {
+  try {
+    const response = await axios.get("http://localhost:3000/thingsToDo");
+    const data = await response.data;
+    return data;
+  } catch (error) {
+    console.log("Error trying to fetch things to do: ", error);
+  }
+};
+
 export const fetchUser = async (userId) => {
   try {
     const response = await axios.get(`${baseUrl}/api/users/${userId}`);

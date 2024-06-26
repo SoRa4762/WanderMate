@@ -180,25 +180,37 @@
       "id": "1",
       "name": "Swimming",
       "price": 100,
-      "img": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/dmqdof6ilmzbs8f137pv"
+      "image": [
+        "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/dmqdof6ilmzbs8f137pv",
+        "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/tv04birzzoi11uqqtmck"
+      ]
     },
     {
       "id": "2",
       "name": "Gym",
       "price": 50,
-      "img": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/zqm3sgocbxa6cu0epojs"
+      "image": [
+        "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/zqm3sgocbxa6cu0epojs",
+        "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/dmqdof6ilmzbs8f137pv"
+      ]
     },
     {
       "id": "3",
       "name": "Spa",
       "price": 150,
-      "img": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/xc37g4dohz25zk3v94ii"
+      "image": [
+        "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/xc37g4dohz25zk3v94ii",
+        "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/zqm3sgocbxa6cu0epojs"
+      ]
     },
     {
       "id": "4",
       "name": "Tennis Court",
       "price": 80,
-      "img": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/rfll5mj7au6pg2pjfxem"
+      "image": [
+        "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/rfll5mj7au6pg2pjfxem",
+        "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/xc37g4dohz25zk3v94ii"
+      ]
     }
   ],
   "reviews": [
