@@ -13,9 +13,9 @@ export const fetchHotels = async () => {
   }
 };
 
-export const fetchHotel = async (hotelId) => {
+export const fetchHotel = async (id) => {
   try {
-    const response = await axios.get(`${baseUrl}/api/hotels/${hotelId}`);
+    const response = await axios.get(`${baseUrl}/api/hotels/${id}`);
     const data = await response.data;
     return data;
   } catch (error) {
@@ -53,11 +53,11 @@ export const fetchUser = async (userId) => {
   }
 };
 
-export const fetchReviews = async (hotelId) => {
+export const fetchReviews = async (id) => {
   try {
     const response = await axios.get(`${baseUrl}/api/reviews`, {
       params: {
-        hotelId: hotelId,
+        id: id,
       },
     });
     const data = await response.data;

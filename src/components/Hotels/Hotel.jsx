@@ -13,30 +13,30 @@ import StarRating from "../../elements/StarRating";
 
 const Hotel = () => {
   const userId = sessionStorage.getItem("userId");
-  const { hotelId } = useParams();
+  const { id } = useParams();
   const [hotel, setHotel] = useState(null);
   const [reviews, setReviews] = useState([]);
   const [reviewData, setReviewData] = useState({
     userId,
-    hotelId,
+    id,
     newReview: "",
     newRating: 0,
   });
 
   useEffect(() => {
     const getHotel = async () => {
-      const data = await fetchHotel(hotelId);
+      const data = await fetchHotel(id);
       setHotel(data);
     };
 
     const getReviews = async () => {
-      const data = await fetchReviews(hotelId);
+      const data = await fetchReviews(id);
       setReviews(data);
     };
 
     getHotel();
     getReviews();
-  }, [hotelId]);
+  }, [id]);
 
   const handleStarClick = (index) => {
     setReviewData((prevData) => ({
