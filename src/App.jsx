@@ -19,10 +19,11 @@ import UserProfile from "./components/User/UserProfile";
 import Tours from "./components/Tours";
 import HotelManagement from "./dashboard/HotelManagement";
 import Bookings from "./dashboard/Bookings";
+import { UserProvider } from "./context/UserContext.jsx";
 
 function App() {
   return (
-    <>
+    <UserProvider>
       <Router>
         <Routes>
           <Route path="/" element={<Landing />} />
@@ -50,7 +51,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
-    </>
+    </UserProvider>
   );
 }
 

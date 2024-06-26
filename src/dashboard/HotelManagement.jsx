@@ -1,25 +1,7 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import axios from "axios";
 import { fetchHotels } from "../api";
-
-const initialHotels = [
-  {
-    id: 1,
-    name: "Hotel 1",
-    price: 100,
-    freeCancellation: true,
-    reserveNow: false,
-    description: "Sample description 1",
-  },
-  {
-    id: 2,
-    name: "Hotel 2",
-    price: 200,
-    freeCancellation: false,
-    reserveNow: true,
-    description: "Sample description 2",
-  },
-];
 
 const HotelManagement = () => {
   const [hotels, setHotels] = useState([]);
@@ -51,8 +33,30 @@ const HotelManagement = () => {
     setImages((prevImages) => prevImages.filter((_, i) => i !== index));
   };
 
-  const handleSubmit = (e) => {
+  const uploadImagesToCloudinary = async () => {
+    const cloudinaryUrl =
+      "https://api.cloudinary.com/v1_1/YOUR_CLOUD_NAME/image/upload";
+    const uploadPreset = "YOUR_UPLOAD_PRESET";
+
+    const imageUrls = await Promise.all(
+      images.map(async (image) => {
+        const formData = new FormData();
+        formData.append("file", image);
+        formData.append("upload_preset", uploadPreset);
+
+        const response = await axios.post(cloudinaryUrl, formData);
+        return response.data.secure_url;
+      })
+    );
+
+    return imageUrls;
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const imageUrls = await uploadImagesToCloudinary();
+
     const hotelData = {
       id: isEditing ? currentHotel.id : hotels.length + 1,
       name,
@@ -60,7 +64,7 @@ const HotelManagement = () => {
       freeCancellation,
       reserveNow,
       description,
-      images,
+      images: imageUrls,
     };
 
     if (isEditing) {
@@ -73,6 +77,15 @@ const HotelManagement = () => {
     } else {
       setHotels([...hotels, hotelData]);
     }
+
+    try {
+      await axios.post("http://localhost:3000/api/hotels", hotelData);
+      alert("Hotel information submitted successfully!");
+    } catch (error) {
+      console.error("Error submitting hotel information:", error);
+      alert("Failed to submit hotel information. Please try again.");
+    }
+
     resetForm();
   };
 
@@ -82,7 +95,7 @@ const HotelManagement = () => {
     setPrice(hotel.price);
     setFreeCancellation(hotel.freeCancellation);
     setReserveNow(hotel.reserveNow);
-    setDescription(hotel.desc);
+    setDescription(hotel.description);
     setImages(hotel.images || []);
     setIsEditing(true);
   };
