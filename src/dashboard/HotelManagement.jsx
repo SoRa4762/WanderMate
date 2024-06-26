@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
 import { fetchHotels } from "../api";
@@ -35,8 +35,8 @@ const HotelManagement = () => {
 
   const uploadImagesToCloudinary = async () => {
     const cloudinaryUrl =
-      "https://api.cloudinary.com/v1_1/YOUR_CLOUD_NAME/image/upload";
-    const uploadPreset = "YOUR_UPLOAD_PRESET";
+      "https://api.cloudinary.com/v1_1/soragatrasambandha/image/upload";
+    const uploadPreset = "syzx315g";
 
     const imageUrls = await Promise.all(
       images.map(async (image) => {
@@ -64,7 +64,7 @@ const HotelManagement = () => {
       freeCancellation,
       reserveNow,
       description,
-      images: imageUrls,
+      image: imageUrls,
     };
 
     if (isEditing) {
@@ -79,7 +79,7 @@ const HotelManagement = () => {
     }
 
     try {
-      await axios.post("http://localhost:3000/api/hotels", hotelData);
+      await axios.post("http://localhost:5218/api/hotels", hotelData);
       alert("Hotel information submitted successfully!");
     } catch (error) {
       console.error("Error submitting hotel information:", error);
