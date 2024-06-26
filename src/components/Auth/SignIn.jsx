@@ -49,6 +49,9 @@ const SignIn = () => {
       );
 
       console.log(response.data);
+      sessionStorage.setItem("token", response.data.token);
+      sessionStorage.setItem("username", response.data.userName);
+      // sessionStorage.setItem("")
 
       navigate("/home");
     } catch (err) {

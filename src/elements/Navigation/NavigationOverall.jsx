@@ -42,7 +42,7 @@ const NavigationOverall = () => {
           href="/user/1"
           className="h-full flex items-center gap-2 cursor-pointer"
         >
-          <p>Username</p>
+          <p>{sessionStorage.getItem("username")}</p>
           <img
             className="h-12 w-12 rounded-full"
             src={userProfile}

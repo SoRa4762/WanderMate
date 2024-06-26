@@ -35,8 +35,8 @@ function App() {
           <Route path="/destination" element={<Destination />} />
           <Route path="/travelpackages" element={<TravelPackages />} />
           <Route path="/hotels" element={<Hotels />} />
-          <Route path="/hotel/:id" element={<Hotel />} />
-          <Route path="/user/:id" element={<UserProfile />} />
+          <Route path="/hotel/:hotelId" element={<Hotel />} />
+          <Route path="/user/:userId" element={<UserProfile />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/termsconditions" element={<TermsConditions />} />
           <Route path="/admin" element={<Layout />}>
