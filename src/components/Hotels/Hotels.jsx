@@ -11,6 +11,7 @@ const Hotels = () => {
     const getHotels = async () => {
       const data = await fetchHotels();
       setHotels(data);
+      console.log(data);
     };
 
     getHotels();

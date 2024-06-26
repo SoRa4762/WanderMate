@@ -14,7 +14,7 @@ const HCard = ({ data }) => {
             {/* lg */}
             <div className="flex-1">
               <img
-                src={item.img}
+                src={item.image[0]}
                 alt="img"
                 className="h-full w-full object-cover rounded-l-md"
               />
