@@ -7,7 +7,7 @@ const Cards = ({ data, url }) => {
       {data?.map((item) => (
         <>
           <Link
-            to={`${url}/${item.hotelId}`}
+            to={`${url}/${item.id}`}
             key={item.id}
             className="h-[30vh] sm:h-[40vh] xl:h-[50vh] w-full flex flex-col justify-between bg-red-200 rounded-lg cursor-pointer drop-shadow-lg  hover:-translate-y-3 transition-all ease-in-out duration-300"
             style={{
