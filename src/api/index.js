@@ -1,9 +1,9 @@
 import axios from "axios";
-const baseUrl = "http://localhost:3000";
+const baseUrl = "http://localhost:5218";
 
 export const fetchHotels = async () => {
   try {
-    const response = await axios.get(`${baseUrl}/hotels`);
+    const response = await axios.get(`${baseUrl}/api/hotels`);
     //tested loading UI functionality for slower APIs
     // setTimeout(() => setHotels(response.data), 1000);
     const data = await response.data;
