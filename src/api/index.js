@@ -15,7 +15,7 @@ export const fetchHotels = async () => {
 
 export const fetchHotel = async (hotelId) => {
   try {
-    const response = await axios.get(`${baseUrl}/hotels/${hotelId}`);
+    const response = await axios.get(`${baseUrl}/api/hotels/${hotelId}`);
     const data = await response.data;
     return data;
   } catch (error) {
@@ -25,7 +25,7 @@ export const fetchHotel = async (hotelId) => {
 
 export const fetchTravelPackages = async () => {
   try {
-    const response = await axios.get(`${baseUrl}/travelPackages`);
+    const response = await axios.get(`${baseUrl}/api/travelPackages`);
     const data = await response.data;
     return data;
   } catch (error) {
@@ -35,7 +35,7 @@ export const fetchTravelPackages = async () => {
 
 export const fetchTopDestinations = async () => {
   try {
-    const response = await axios.get(`${baseUrl}/topDestinations`);
+    const response = await axios.get(`${baseUrl}/api/topDestinations`);
     const data = await response.data;
     return data;
   } catch (error) {
@@ -45,7 +45,7 @@ export const fetchTopDestinations = async () => {
 
 export const fetchUser = async (userId) => {
   try {
-    const response = await axios.get(`${baseUrl}/users/${userId}`);
+    const response = await axios.get(`${baseUrl}/api/users/${userId}`);
     const data = await response.data;
     return data;
   } catch (err) {
@@ -55,7 +55,7 @@ export const fetchUser = async (userId) => {
 
 export const fetchReviews = async (hotelId) => {
   try {
-    const response = await axios.get(`${baseUrl}/reviews`, {
+    const response = await axios.get(`${baseUrl}/api/reviews`, {
       params: {
         hotelId: hotelId,
       },

@@ -8,7 +8,7 @@ const HCard = ({ data }) => {
       {data?.map((item) => (
         <>
           <div
-            key={item.id}
+            key={item.hotelId}
             className="h-[30vh] sm:h-[40vh] xl:h-[50vh] w-full flex bg-white rounded-md cursor-pointer drop-shadow-xl transition-all ease-in-out duration-300"
           >
             {/* lg */}
@@ -24,7 +24,7 @@ const HCard = ({ data }) => {
               <div className="flex flex-col text-center gap-2">
                 <p>$ {item.price}</p>
                 <Link
-                  to={`/hotel/${item.id}`}
+                  to={`/hotel/${item.hotelId}`}
                   className="bg-blue-600 hover:bg-blue-800 text-white px-8 py-1 rounded-md font-medium"
                 >
                   View Deal
