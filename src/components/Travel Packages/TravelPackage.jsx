@@ -2,25 +2,24 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import {
   fetchTravelPackage,
-  fetchReviews,
-  // submitReview
+  fetchTravelPackageReviews,
+  postTravelPackageReview,
 } from "../../api";
 import NavigationOverall from "../../elements/Navigation/NavigationOverall";
 import FFAll from "../../elements/Footers/FFAll";
 import { hotelDetails } from "../../helper/data";
 import Map from "../Map/Map";
 import StarRating from "../../elements/StarRating";
+import userProfile from "../../assets/userProfile.jpg";
 
 const TravelPackage = () => {
-  const userId = sessionStorage.getItem("userId");
+  // const userId = sessionStorage.getItem("userId");
   const { id } = useParams();
   const [packages, setPackages] = useState(null);
   const [reviews, setReviews] = useState([]);
   const [reviewData, setReviewData] = useState({
-    userId,
-    id,
-    newReview: "",
-    newRating: 0,
+    reviewText: "",
+    rating: 0,
   });
 
   useEffect(() => {
@@ -30,7 +29,7 @@ const TravelPackage = () => {
     };
 
     const getReviews = async () => {
-      const data = await fetchReviews(id);
+      const data = await fetchTravelPackageReviews();
       setReviews(data);
     };
 
@@ -41,26 +40,26 @@ const TravelPackage = () => {
   const handleStarClick = (index) => {
     setReviewData((prevData) => ({
       ...prevData,
-      newRating: index + 1,
+      rating: index + 1,
     }));
   };
 
   const handleReviewSubmit = async (e) => {
     e.preventDefault();
-    if (reviewData.newReview.trim() === "" || reviewData.newRating === 0) {
+    if (reviewData.reviewText.trim() === "" || reviewData.rating === 0) {
       alert("Please provide a review and a rating.");
       return;
     }
 
     try {
-      // await submitReview(reviewData);
+      await postTravelPackageReview(id, reviewData);
       await console.log(reviewData);
       // await setReviews(reviewData);
       setReviews([...reviews, reviewData]);
       setReviewData((prevData) => ({
         ...prevData,
-        newReview: "",
-        newRating: "",
+        reviewText: "",
+        rating: "",
       }));
       alert("Review submitted successfully!");
     } catch (error) {
@@ -141,11 +140,12 @@ const TravelPackage = () => {
 
               {/* details section - reviews */}
               <div className="h-full w-full shadow-lg mb-8" id="reviews">
-                <h2 className="p-4 font-bold text-sm md:text-xl lg:2xl">
+                <h2 className="p-4 font-semibold text-sm md:text-xl lg:2xl">
                   Reviews
                 </h2>
+                {console.log(reviews)}
                 {!reviews ? (
-                  <p className="p-4 text-xs md:text-base">No Reviews Yet</p>
+                  <p className="text-xs md:text-base p-4">No Reviews Yet</p>
                 ) : (
                   reviews.map((review, index) => (
                     <div
@@ -154,15 +154,23 @@ const TravelPackage = () => {
                     >
                       <div className="h-full w-full flex items-center gap-4">
                         <img
-                          src={review.userImage}
-                          alt={review.user}
-                          className="h-12 w-12 rounded-full object-cover"
+                          src={
+                            review.userImage ? review.userImage : userProfile
+                          }
+                          alt={review?.createdBy}
+                          className="h-8 w-8 md:h-12 md:w-12 rounded-full object-cover"
                         />
-                        <p className="font-bold text-xl">{review.user}</p>
+                        <p className="font-semibold text-sm md:text-xl lg:2xl">
+                          {review.createdBy}
+                        </p>
                         <StarRating rating={review.rating} />
                       </div>
-                      <p className="font-medium text-md">{review.comment}</p>
-                      <p className="font-bold text-md">{review.date}</p>
+                      <p className="font-medium text-xs md:text-base">
+                        {review.reviewText}
+                      </p>
+                      <p className="font-bold text-xs md:text-base">
+                        {new Date(review.createdOn).toLocaleString()}
+                      </p>{" "}
                       <div className="flex justify-center pt-4">
                         <hr className="border-b-1 border-gray-500 w-[80%]" />
                       </div>
@@ -176,20 +184,20 @@ const TravelPackage = () => {
                 className="h-full w-full shadow-lg p-8 rounded-lg mb-8"
                 id="write-review"
               >
-                <h2 className="font-bold text-sm md:text-xl lg:2xl md:mb-4">
+                <h2 className="font-semibold text-sm md:text-xl lg:2xl mb-2">
                   Write a Review
                 </h2>
                 <form onSubmit={handleReviewSubmit}>
                   <div className="mb-4">
-                    <label className="text-xs md:text-base mb-2">
+                    <label className="block text-xs md:text-base mb-2">
                       Your Review
                     </label>
                     <textarea
-                      value={reviewData.newReview}
+                      value={reviewData.reviewText}
                       onChange={(e) =>
                         setReviewData({
                           ...reviewData,
-                          newReview: e.target.value,
+                          reviewText: e.target.value,
                         })
                       }
                       className="w-full p-2 border rounded"
@@ -206,8 +214,8 @@ const TravelPackage = () => {
                         <svg
                           key={index}
                           onClick={() => handleStarClick(index)}
-                          className={`md:h-6 md:w-6 w-4 h-4 lg:h-8 lg:w-8 cursor-pointer ${
-                            index < reviewData.newRating
+                          className={`h-4 w-4 md:h-6 md:w-6 lg:h-8 lg:w-8 cursor-pointer ${
+                            index < reviewData.rating
                               ? "text-yellow-500"
                               : "text-gray-400"
                           }`}
