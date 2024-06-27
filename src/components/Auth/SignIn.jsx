@@ -53,6 +53,7 @@ const SignIn = () => {
 
       console.log(response.data);
       sessionStorage.setItem("token", response.data.token);
+      sessionStorage.setItem("username", response.data.userName);
       setUserAuth({ username: response.data.userName });
       navigate("/home");
     } catch (err) {

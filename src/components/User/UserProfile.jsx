@@ -4,22 +4,22 @@ import { useParams } from "react-router-dom";
 import NavigationOverall from "../../elements/Navigation/NavigationOverall";
 
 const UserProfile = () => {
-  const { id } = useParams();
+  const { userId } = useParams();
   const [user, setUser] = useState();
 
   useEffect(() => {
     const getUser = async () => {
-      const userData = await fetchUser(id);
+      const userData = await fetchUser(userId);
       setUser(userData);
       console.log(userData);
     };
 
     getUser();
-  }, [id]);
+  }, [userId]);
 
   return (
     <>
-      <div className="px-8 sm:px-12 md:px-16 lg:px-20">
+      <div className="px-2 sm:px-4 md:px-8 lg:px-20">
         <NavigationOverall />
         {!user ? (
           <div>Loading...</div>
@@ -43,6 +43,13 @@ const UserProfile = () => {
                   Edit Profile
                 </button>
               </div>
+            </div>
+
+            {/* user details */}
+            <div className="h-80 pt-24 flex flex-col">
+              <h1 className="font-bold text-xl">{user.name}</h1>
+              <p className="text-gray-500 text-sm">{user.userHandle}</p>
+              <p className="text-[0.95rem]">{user.bio}</p>
             </div>
           </div>
         )}

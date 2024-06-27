@@ -55,7 +55,7 @@ export const fetchThingsToDo = async () => {
 
 export const fetchUser = async (userId) => {
   try {
-    const response = await axios.get(`${baseUrl}/api/users/${userId}`);
+    const response = await axios.get(`http://localhost:3000/users/${userId}`);
     const data = await response.data;
     return data;
   } catch (err) {

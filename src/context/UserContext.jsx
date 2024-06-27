@@ -1,4 +1,4 @@
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 
 //create context
 export const UserContext = createContext();
@@ -10,6 +10,13 @@ export const UserProvider = ({ children }) => {
     username: "",
     profilePicture: "",
   });
+
+  useEffect(() => {
+    const username = sessionStorage.getItem("username");
+    if (username) {
+      setUserAuth((prevData) => ({ ...prevData, username }));
+    }
+  }, []);
 
   return (
     <UserContext.Provider value={{ userAuth, setUserAuth }}>

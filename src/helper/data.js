@@ -20,19 +20,19 @@ import dest4 from "../assets/img9.jpg";
 export const NavCont = [
   {
     navTitle: "About",
-    link: "/about",
+    link: "#",
   },
   {
     navTitle: "Tours",
-    link: "/tours",
+    link: "#",
   },
   {
     navTitle: "Sale",
-    link: "/sale",
+    link: "#",
   },
   {
     navTitle: "Contact",
-    link: "/contact",
+    link: "#",
   },
 ];
 
