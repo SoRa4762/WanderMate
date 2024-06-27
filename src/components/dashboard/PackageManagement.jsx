@@ -45,9 +45,12 @@ const PackageManagement = () => {
         formData.append("upload_preset", uploadPreset);
 
         const response = await axios.post(cloudinaryUrl, formData);
+        console.log("individual image Url: ", response.data.secure_url);
         return response.data.secure_url;
       })
     );
+
+    console.log("All image Urls", imageUrls);
 
     return imageUrls;
   };
