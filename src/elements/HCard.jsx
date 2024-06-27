@@ -2,13 +2,13 @@
 
 import StarRating from "./StarRating";
 import { Link } from "react-router-dom";
-const HCard = ({ data }) => {
+const HCard = ({ data, url }) => {
   return (
     <div className="h-full w-full flex flex-col gap-8 pt-8">
       {data?.map((item) => (
         <>
           <div
-            key={item.hotelId}
+            key={item.id}
             className="h-[30vh] sm:h-[40vh] xl:h-[50vh] w-full flex bg-white rounded-md cursor-pointer drop-shadow-xl transition-all ease-in-out duration-300"
           >
             {/* lg */}
@@ -24,7 +24,7 @@ const HCard = ({ data }) => {
               <div className="flex flex-col text-center gap-2">
                 <p>$ {item.price}</p>
                 <Link
-                  to={`/hotel/${item.hotelId}`}
+                  to={`/${url}/${item.id}`}
                   className="bg-blue-600 hover:bg-blue-800 text-white px-8 py-1 rounded-md font-medium"
                 >
                   View Deal

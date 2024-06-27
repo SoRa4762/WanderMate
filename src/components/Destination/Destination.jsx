@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import NavigationOverall from "../../elements/Navigation/NavigationOverall";
 import {
   hotels,
@@ -11,11 +12,54 @@ import ThingsToDo from "../../assets/bg.jpg";
 import Carousel from "../../elements/MyCarousel";
 import FFAll from "../../elements/Footers/FFAll";
 import Cards from "../../elements/Cards";
+import {
+  fetchHotels,
+  fetchThingsToDo,
+  fetchTopDestinations,
+  fetchTravelPackages,
+} from "../../api";
 
 const Destination = () => {
+  const [hotels, setHotels] = useState();
+  const [travelPackages, setTravelPackages] = useState();
+  const [topDestinations, setTopDestinations] = useState();
+  const [thingsToDo, setThingsToDo] = useState();
+
+  //url for cards
+  const hotelUrl = "/hotel";
+  // const destinationUrl = "/destination";
+  const packageUrl = "/package";
+  const thingsToDoUrl = "/thingsToDo";
+
+  useEffect(() => {
+    const getHotels = async () => {
+      const data = await fetchHotels();
+      setHotels(data.slice(0, 4));
+    };
+
+    const getTravelPackages = async () => {
+      const data = await fetchTravelPackages();
+      setTravelPackages(data.slice(0, 4));
+    };
+
+    const getTopDestinations = async () => {
+      const data = await fetchTopDestinations();
+      setTopDestinations(data.slice(0, 4));
+    };
+
+    const getThingsToDo = async () => {
+      const data = await fetchThingsToDo();
+      setThingsToDo(data.slice(0, 4));
+    };
+
+    getHotels();
+    getTravelPackages();
+    getTopDestinations();
+    getThingsToDo();
+  }, []);
   return (
     <>
-      <div className="px-8 sm:px-12 md:px-16 lg:px-20">
+      <div className="px-2 sm:px-4 md:px-8 lg:px-20">
         <NavigationOverall />
         {/* carousel */}
         <Carousel data={destination} />
@@ -35,7 +79,7 @@ const Destination = () => {
               </h1>
             </div>
             {/* cards */}
-            <Cards data={hotels} />
+            <Cards data={hotels} url={hotelUrl} />
           </div>
 
           {/* top travel packages */}
@@ -52,7 +96,7 @@ const Destination = () => {
               </h1>
             </div>
             {/* cards */}
-            <Cards data={travelPackages} />
+            <Cards data={travelPackages} url={packageUrl} />
           </div>
 
           {/* things to do */}
@@ -69,7 +113,7 @@ const Destination = () => {
               </h1>
             </div>
             {/* cards */}
-            <Cards data={thingsToDo} />
+            <Cards data={thingsToDo} url={thingsToDoUrl} />
           </div>
 
           <FFAll />

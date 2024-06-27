@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
-import { adminSidebar } from "../helper/data";
+import { adminSidebar } from "../../helper/data";
 
 const Sidebar = () => {
   return (

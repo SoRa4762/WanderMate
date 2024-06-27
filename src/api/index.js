@@ -1,5 +1,6 @@
 import axios from "axios";
 const baseUrl = "http://localhost:5218";
+const jsonUrl = "http://localhost:3000";
 
 export const fetchHotels = async () => {
   try {
@@ -13,9 +14,9 @@ export const fetchHotels = async () => {
   }
 };
 
-export const fetchHotel = async (hotelId) => {
+export const fetchHotel = async (id) => {
   try {
-    const response = await axios.get(`${baseUrl}/api/hotels/${hotelId}`);
+    const response = await axios.get(`${baseUrl}/api/hotels/${id}`);
     const data = await response.data;
     return data;
   } catch (error) {
@@ -25,7 +26,7 @@ export const fetchHotel = async (hotelId) => {
 
 export const fetchTravelPackages = async () => {
   try {
-    const response = await axios.get(`${baseUrl}/api/travelPackages`);
+    const response = await axios.get(`${baseUrl}/api/destination`);
     const data = await response.data;
     return data;
   } catch (error) {
@@ -33,9 +34,19 @@ export const fetchTravelPackages = async () => {
   }
 };
 
+export const fetchTravelPackage = async (id) => {
+  try {
+    const response = await axios.get(`${baseUrl}/api/destination/${id}`);
+    const data = await response.data;
+    return data;
+  } catch (error) {
+    console.log("Error trying to fetch travel package data: ", error);
+  }
+};
+
 export const fetchTopDestinations = async () => {
   try {
-    const response = await axios.get(`${baseUrl}/api/topDestinations`);
+    const response = await axios.get(`${jsonUrl}/topDestinations`);
     const data = await response.data;
     return data;
   } catch (error) {
@@ -43,9 +54,19 @@ export const fetchTopDestinations = async () => {
   }
 };
 
+export const fetchThingsToDo = async () => {
+  try {
+    const response = await axios.get(`${jsonUrl}/thingsToDo`);
+    const data = await response.data;
+    return data;
+  } catch (error) {
+    console.log("Error trying to fetch things to do: ", error);
+  }
+};
+
 export const fetchUser = async (userId) => {
   try {
-    const response = await axios.get(`${baseUrl}/api/users/${userId}`);
+    const response = await axios.get(`${jsonUrl}/users/${userId}`);
     const data = await response.data;
     return data;
   } catch (err) {
@@ -53,11 +74,11 @@ export const fetchUser = async (userId) => {
   }
 };
 
-export const fetchReviews = async (hotelId) => {
+export const fetchReviews = async (id) => {
   try {
     const response = await axios.get(`${baseUrl}/api/reviews`, {
       params: {
-        hotelId: hotelId,
+        id: id,
       },
     });
     const data = await response.data;

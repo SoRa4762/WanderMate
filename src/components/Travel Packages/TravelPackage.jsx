@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import {
-  fetchHotel,
+  fetchTravelPackage,
   fetchReviews,
   // submitReview
 } from "../../api";
@@ -11,10 +11,10 @@ import { hotelDetails } from "../../helper/data";
 import Map from "../Map/Map";
 import StarRating from "../../elements/StarRating";
 
-const Hotel = () => {
+const TravelPackage = () => {
   const userId = sessionStorage.getItem("userId");
   const { id } = useParams();
-  const [hotel, setHotel] = useState(null);
+  const [packages, setPackages] = useState(null);
   const [reviews, setReviews] = useState([]);
   const [reviewData, setReviewData] = useState({
     userId,
@@ -24,9 +24,9 @@ const Hotel = () => {
   });
 
   useEffect(() => {
-    const getHotel = async () => {
-      const data = await fetchHotel(id);
-      setHotel(data);
+    const getTravelPackages = async () => {
+      const data = await fetchTravelPackage(id);
+      setPackages(data);
     };
 
     const getReviews = async () => {
@@ -34,7 +34,7 @@ const Hotel = () => {
       setReviews(data);
     };
 
-    getHotel();
+    getTravelPackages();
     getReviews();
   }, [id]);
 
@@ -73,7 +73,7 @@ const Hotel = () => {
     <>
       <div className="px-2 sm:px-4 md:px-8 lg:px-20">
         <NavigationOverall />
-        {!hotel ? (
+        {!packages ? (
           <div>Loading...</div>
         ) : (
           <div className="h-full w-full">
@@ -83,19 +83,19 @@ const Hotel = () => {
               <div className="h-full w-full lg:w-[60%] rounded-lg shadow-xl cursor-pointer">
                 <img
                   className="h-full w-full object-cover rounded-lg"
-                  src={hotel.image[0]}
-                  alt={hotel.name}
+                  src={packages.image[0]}
+                  alt={packages.name}
                 />
               </div>
               {/* 4 images: slice 4 images and map them */}
               <div className="hidden lg:flex h-full w-[40%] shadow-xl rounded-lg">
                 <div className="lg:grid h-full w-full grid-cols-2 grid-rows-2 gap-2">
-                  {hotel.image.slice(1, 5).map((img, i) => (
+                  {packages.image.slice(1, 5).map((img, i) => (
                     <img
                       key={i}
                       className="h-full w-full object-cover rounded-lg cursor-pointer"
                       src={img}
-                      alt={hotel.name}
+                      alt={packages.name}
                     />
                   ))}
                 </div>
@@ -123,9 +123,9 @@ const Hotel = () => {
               >
                 <div className="flex sm:flex-[2] flex-col">
                   <p className="font-bold text-2xl sm:text-3xl lg:text-4xl">
-                    {hotel.rating}
+                    {packages.rating}
                   </p>
-                  <p>{hotel.description}</p>
+                  <p>{packages.description}</p>
                 </div>
                 <div className="flex sm:flex-1 flex-col justify-center items-center">
                   <button className="py-1 px-8 mt-4 sm:mt-0 bg-blue-500 hover:bg-blue-700 text-white font-semibold rounded-md">
@@ -233,4 +233,4 @@ const Hotel = () => {
   );
 };
 
-export default Hotel;
+export default TravelPackage;

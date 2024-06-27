@@ -1,7 +1,10 @@
+import { useContext } from "react";
+import { UserContext } from "../../context/UserContext.jsx";
 import userProfile from "../../assets/userProfile.jpg";
 import { navOverall } from "../../helper/data";
 
 const NavigationOverall = () => {
+  const { userAuth } = useContext(UserContext);
   return (
     <>
       <div className="h-[7vh] w-full flex justify-between items-center font-bold lg:text-xl pt-2">
@@ -42,7 +45,7 @@ const NavigationOverall = () => {
           href="/user/1"
           className="h-full flex items-center gap-2 cursor-pointer"
         >
-          <p>{sessionStorage.getItem("username")}</p>
+          <p>{userAuth.username}</p>
           <img
             className="h-12 w-12 rounded-full"
             src={userProfile}

@@ -20,19 +20,19 @@ import dest4 from "../assets/img9.jpg";
 export const NavCont = [
   {
     navTitle: "About",
-    link: "/about",
+    link: "#",
   },
   {
     navTitle: "Tours",
-    link: "/tours",
+    link: "#",
   },
   {
     navTitle: "Sale",
-    link: "/sale",
+    link: "#",
   },
   {
     navTitle: "Contact",
-    link: "/contact",
+    link: "#",
   },
 ];
 
@@ -336,8 +336,8 @@ export const adminSidebar = [
   },
   {
     id: 3,
-    to: "/admin/manage-destinations",
-    name: "Destinations",
+    to: "/admin/manage-packages",
+    name: "Travel Packages",
   },
   {
     id: 4,

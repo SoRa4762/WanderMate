@@ -1,10 +1,11 @@
-// import { useState } from "react";
+import { useContext } from "react";
 import SignInImage from "../../assets/undraw_signin.svg";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { signInSchema } from "../../Validations/userValidation";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../context/UserContext.jsx";
 
 const SignIn = () => {
   // const [signInValues, setSignInValues] = useState({});
@@ -29,6 +30,8 @@ const SignIn = () => {
 
   const navigate = useNavigate();
 
+  const { setUserAuth } = useContext(UserContext);
+
   const {
     register,
     handleSubmit,
@@ -51,8 +54,7 @@ const SignIn = () => {
       console.log(response.data);
       sessionStorage.setItem("token", response.data.token);
       sessionStorage.setItem("username", response.data.userName);
-      // sessionStorage.setItem("")
-
+      setUserAuth({ username: response.data.userName });
       navigate("/home");
     } catch (err) {
       console.log("There was an error signing in: " + err);

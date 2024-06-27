@@ -120,28 +120,36 @@
       "id": "1",
       "name": "Kathmandu Durbar Square",
       "price": 500,
-      "img": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/ymy6oklnubpr2pi9n3yy",
+      "image": [
+        "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/ymy6oklnubpr2pi9n3yy"
+      ],
       "desc": "Kathmandu Durbar Square is the historic heart of Kathmandu with ancient temples, palaces and courtyards including the old royal palace."
     },
     {
       "id": "2",
       "name": "Phewa Lake",
       "price": 400,
-      "img": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/zijneie6x8jyzgebubox",
+      "image": [
+        "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/zijneie6x8jyzgebubox"
+      ],
       "desc": "Phewa Lake is a large scenic lake in Pokhara with views of the Annapurna Range and activities like boating and paragliding."
     },
     {
       "id": "3",
       "name": "Chitwan National Park",
       "price": 350,
-      "img": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/c1gotsoxxacoqgl4xjoo",
+      "image": [
+        "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/c1gotsoxxacoqgl4xjoo"
+      ],
       "desc": "Chitwan National Park protects rare wildlife like one-horned rhinos, Royal Bengal tigers and Gharial crocodiles."
     },
     {
       "id": "4",
       "name": "Lumbini Sacred Garden",
       "price": 300,
-      "img": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/hlsu74onuhdcs53rldd7",
+      "image": [
+        "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/hlsu74onuhdcs53rldd7"
+      ],
       "desc": "Lumbini Sacred Garden contains ancient Buddhist monasteries, stupas and the exact birthplace of Buddha."
     }
   ],
@@ -180,25 +188,37 @@
       "id": "1",
       "name": "Swimming",
       "price": 100,
-      "img": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/dmqdof6ilmzbs8f137pv"
+      "image": [
+        "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/dmqdof6ilmzbs8f137pv",
+        "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/tv04birzzoi11uqqtmck"
+      ]
     },
     {
       "id": "2",
       "name": "Gym",
       "price": 50,
-      "img": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/zqm3sgocbxa6cu0epojs"
+      "image": [
+        "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/zqm3sgocbxa6cu0epojs",
+        "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/dmqdof6ilmzbs8f137pv"
+      ]
     },
     {
       "id": "3",
       "name": "Spa",
       "price": 150,
-      "img": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/xc37g4dohz25zk3v94ii"
+      "image": [
+        "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/xc37g4dohz25zk3v94ii",
+        "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/zqm3sgocbxa6cu0epojs"
+      ]
     },
     {
       "id": "4",
       "name": "Tennis Court",
       "price": 80,
-      "img": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/rfll5mj7au6pg2pjfxem"
+      "image": [
+        "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/rfll5mj7au6pg2pjfxem",
+        "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/v1/WanderMate/xc37g4dohz25zk3v94ii"
+      ]
     }
   ],
   "reviews": [
@@ -260,11 +280,12 @@
   "users": [
     {
       "id": "1",
-      "name": "User name",
+      "name": "Sora",
       "email": "user@gmail.com",
       "password": "passuuserUwU",
-      "image": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/juzdfyafpfijrb8nhkfa",
-      "coverImage": "https://res.cloudinary.com/soragatrasambandha/image/upload/f_auto,q_auto/whwvm1jz6ghze3gdfbsu"
+      "image": "https://res.cloudinary.com/soragatrasambandha/image/upload/v1719430781/ekmdys34ldonak4gbrdz.jpg",
+      "coverImage": "https://res-console.cloudinary.com/soragatrasambandha/thumbnails/v1/image/upload/v1650990940/cWlheXFhMGI0aGlpcjF6cXh3cXE=/drilldown",
+      "bio": "My name is Sora because I was born during a thunderstorm, and 'Sora' means 'sky' in Japanese. The raging storm outside was a powerful force of nature, and my parents wanted to give me a name that reflected the majesty and beauty of the sky."
     }
   ]
 }
