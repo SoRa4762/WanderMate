@@ -4,6 +4,7 @@ import {
   fetchTravelPackage,
   fetchTravelPackageReviews,
   postTravelPackageReview,
+  bookTravelPackage,
 } from "../../api";
 import NavigationOverall from "../../elements/Navigation/NavigationOverall";
 import FFAll from "../../elements/Footers/FFAll";
@@ -42,6 +43,11 @@ const TravelPackage = () => {
       ...prevData,
       rating: index + 1,
     }));
+  };
+
+  const handleBookTravelPackage = async (packageName) => {
+    const bookPackage = await bookTravelPackage(packageName);
+    console.log(bookPackage);
   };
 
   const handleReviewSubmit = async (e) => {
@@ -127,7 +133,10 @@ const TravelPackage = () => {
                   <p>{packages.description}</p>
                 </div>
                 <div className="flex sm:flex-1 flex-col justify-center items-center">
-                  <button className="bg-blue-600 hover:bg-blue-800 text-white mt-4 px-8 py-1 rounded-md font-medium">
+                  <button
+                    onClick={() => handleBookTravelPackage(packages.name)}
+                    className="bg-blue-600 hover:bg-blue-800 text-white mt-4 px-8 py-1 rounded-md font-medium"
+                  >
                     Book Now
                   </button>
                 </div>

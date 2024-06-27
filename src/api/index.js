@@ -26,6 +26,38 @@ export const fetchHotel = async (id) => {
   }
 };
 
+export const bookHotel = async (hotelName) => {
+  try {
+    const response = await axios.post(
+      `${baseUrl}/api/hotelbooking?name=${hotelName}`,
+      null,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    return response;
+  } catch (err) {
+    console.log("Error trying to book hotel: ", err);
+  }
+};
+
+export const fetchHotelBooking = async () => {
+  try {
+    const response = await axios.get(`${baseUrl}/api/hotelbooking`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    const data = await response.data;
+    return data;
+  } catch (err) {
+    console.log("Error trying to fetch hotel booking: ", err);
+  }
+};
+
 export const fetchHotelReviews = async () => {
   try {
     const response = await axios.get(`${baseUrl}/api/hotelreviews`, {
@@ -79,6 +111,38 @@ export const fetchTravelPackages = async () => {
     return data;
   } catch (error) {
     console.log("Error trying to fetch travel packages data: ", error);
+  }
+};
+
+export const bookTravelPackage = async (packageName) => {
+  try {
+    const response = await axios.post(
+      `${baseUrl}/api/destinationbooking?name=${packageName}`,
+      null,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    const data = await response.data;
+    return data;
+  } catch (err) {
+    console.log("Error trying to book travel package: ", err);
+  }
+};
+
+export const fetchTravelBooking = async () => {
+  try {
+    const response = await axios.get(`${baseUrl}/api/destinationbooking`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    const data = await response.data;
+    return data;
+  } catch (err) {
+    console.log("Error trying to fetch travel booking: ", err);
   }
 };
 
