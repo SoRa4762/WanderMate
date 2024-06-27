@@ -128,7 +128,7 @@ const TravelPackage = () => {
                   <p>{packages.description}</p>
                 </div>
                 <div className="flex sm:flex-1 flex-col justify-center items-center">
-                  <button className="py-1 px-8 mt-4 sm:mt-0 bg-blue-500 hover:bg-blue-700 text-white font-semibold rounded-md">
+                  <button className="bg-blue-600 hover:bg-blue-800 text-white mt-4 px-8 py-1 rounded-md font-medium">
                     Book Now
                   </button>
                 </div>
@@ -141,9 +141,11 @@ const TravelPackage = () => {
 
               {/* details section - reviews */}
               <div className="h-full w-full shadow-lg mb-8" id="reviews">
-                <h2 className="text-2xl font-bold p-4">Reviews</h2>
+                <h2 className="p-4 font-bold text-sm md:text-xl lg:2xl">
+                  Reviews
+                </h2>
                 {!reviews ? (
-                  <p className="font-bold text-xl p-4">No Reviews Yet</p>
+                  <p className="p-4 text-xs md:text-base">No Reviews Yet</p>
                 ) : (
                   reviews.map((review, index) => (
                     <div
@@ -174,10 +176,12 @@ const TravelPackage = () => {
                 className="h-full w-full shadow-lg p-8 rounded-lg mb-8"
                 id="write-review"
               >
-                <h2 className="text-2xl font-bold mb-4">Write a Review</h2>
+                <h2 className="font-bold text-sm md:text-xl lg:2xl md:mb-4">
+                  Write a Review
+                </h2>
                 <form onSubmit={handleReviewSubmit}>
                   <div className="mb-4">
-                    <label className="block text-gray-700 mb-2">
+                    <label className="text-xs md:text-base mb-2">
                       Your Review
                     </label>
                     <textarea
@@ -194,7 +198,7 @@ const TravelPackage = () => {
                     ></textarea>
                   </div>
                   <div className="mb-4">
-                    <label className="block text-gray-700 mb-2">
+                    <label className="block text-xs md:text-base mb-2">
                       Your Rating
                     </label>
                     <div className="flex">
@@ -202,7 +206,7 @@ const TravelPackage = () => {
                         <svg
                           key={index}
                           onClick={() => handleStarClick(index)}
-                          className={`h-8 w-8 cursor-pointer ${
+                          className={`md:h-6 md:w-6 w-4 h-4 lg:h-8 lg:w-8 cursor-pointer ${
                             index < reviewData.newRating
                               ? "text-yellow-500"
                               : "text-gray-400"
@@ -218,7 +222,7 @@ const TravelPackage = () => {
                   </div>
                   <button
                     type="submit"
-                    className="py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white font-semibold rounded-md"
+                    className="bg-blue-600 hover:bg-blue-800 text-white px-4 py-1 rounded-md font-medium"
                   >
                     Submit Review
                   </button>

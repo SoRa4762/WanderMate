@@ -280,11 +280,11 @@
   "users": [
     {
       "id": "1",
-      "name": "Sora",
+      "name": "sora",
       "email": "user@gmail.com",
       "password": "passuuserUwU",
       "image": "https://res.cloudinary.com/soragatrasambandha/image/upload/v1719430781/ekmdys34ldonak4gbrdz.jpg",
-      "coverImage": "https://res-console.cloudinary.com/soragatrasambandha/thumbnails/v1/image/upload/v1650990940/cWlheXFhMGI0aGlpcjF6cXh3cXE=/drilldown",
+      "coverImage": "https://res.cloudinary.com/soragatrasambandha/image/upload/v1719430786/yyzbkc6drznfthfadwzc.jpg",
       "bio": "My name is Sora because I was born during a thunderstorm, and 'Sora' means 'sky' in Japanese. The raging storm outside was a powerful force of nature, and my parents wanted to give me a name that reflected the majesty and beauty of the sky."
     }
   ]
