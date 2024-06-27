@@ -1,5 +1,5 @@
-import Sidebar from "../dashboard/Sidebar";
-import MainPanel from "../dashboard/MainPanel";
+import Sidebar from "./Sidebar";
+import MainPanel from "./MainPanel";
 
 const Layout = () => {
   return (

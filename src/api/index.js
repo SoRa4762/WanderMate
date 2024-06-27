@@ -1,5 +1,6 @@
 import axios from "axios";
 const baseUrl = "http://localhost:5218";
+const jsonUrl = "http://localhost:3000";
 
 export const fetchHotels = async () => {
   try {
@@ -25,7 +26,7 @@ export const fetchHotel = async (id) => {
 
 export const fetchTravelPackages = async () => {
   try {
-    const response = await axios.get(`${baseUrl}/api/travelPackages`);
+    const response = await axios.get(`${baseUrl}/api/destination`);
     const data = await response.data;
     return data;
   } catch (error) {
@@ -33,9 +34,19 @@ export const fetchTravelPackages = async () => {
   }
 };
 
+export const fetchTravelPackage = async (id) => {
+  try {
+    const response = await axios.get(`${baseUrl}/api/destination/${id}`);
+    const data = await response.data;
+    return data;
+  } catch (error) {
+    console.log("Error trying to fetch travel package data: ", error);
+  }
+};
+
 export const fetchTopDestinations = async () => {
   try {
-    const response = await axios.get(`${baseUrl}/api/topDestinations`);
+    const response = await axios.get(`${jsonUrl}/topDestinations`);
     const data = await response.data;
     return data;
   } catch (error) {
@@ -45,7 +56,7 @@ export const fetchTopDestinations = async () => {
 
 export const fetchThingsToDo = async () => {
   try {
-    const response = await axios.get("http://localhost:3000/thingsToDo");
+    const response = await axios.get(`${jsonUrl}/thingsToDo`);
     const data = await response.data;
     return data;
   } catch (error) {
@@ -55,7 +66,7 @@ export const fetchThingsToDo = async () => {
 
 export const fetchUser = async (userId) => {
   try {
-    const response = await axios.get(`http://localhost:3000/users/${userId}`);
+    const response = await axios.get(`${jsonUrl}/users/${userId}`);
     const data = await response.data;
     return data;
   } catch (err) {

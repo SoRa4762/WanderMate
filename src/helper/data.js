@@ -336,8 +336,8 @@ export const adminSidebar = [
   },
   {
     id: 3,
-    to: "/admin/manage-destinations",
-    name: "Destinations",
+    to: "/admin/manage-packages",
+    name: "Travel Packages",
   },
   {
     id: 4,
