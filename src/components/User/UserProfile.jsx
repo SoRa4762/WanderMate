@@ -6,6 +6,7 @@ import NavigationOverall from "../../elements/Navigation/NavigationOverall";
 const UserProfile = () => {
   const { userId } = useParams();
   const [user, setUser] = useState();
+  const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
     const getUser = async () => {
@@ -16,6 +17,10 @@ const UserProfile = () => {
 
     getUser();
   }, [userId]);
+
+  const toggleModal = () => {
+    setOpenModal(!openModal);
+  };
 
   return (
     <>
@@ -39,7 +44,10 @@ const UserProfile = () => {
                   alt={user.name}
                 />
 
-                <button className="absolute top-[345px] right-8 lg:right-28 xl:right-32 text-sm md:text-base text-normal text-black border-black border-2 rounded-3xl px-6 py-1 md:px-12 md:py-2 hover:bg-black hover:text-white transition-all ease-in-out duration-300">
+                <button
+                  onClick={toggleModal}
+                  className="absolute top-[345px] right-8 lg:right-28 xl:right-32 text-sm md:text-base text-normal text-black border-black border-2 rounded-3xl px-6 py-1 md:px-12 md:py-2 hover:bg-black hover:text-white transition-all ease-in-out duration-300"
+                >
                   Edit Profile
                 </button>
               </div>
@@ -51,6 +59,43 @@ const UserProfile = () => {
               <p className="text-gray-500 text-sm">{user.userHandle}</p>
               <p className="text-[0.95rem]">{user.bio}</p>
             </div>
+
+            {/* edit user details */}
+            {openModal && (
+              <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col gap-4 justify-center items-center">
+                <div className="p-8 flex flex-col gap-4 bg-black rounded-xl">
+                  <input
+                    className="h-10 md:h-14 pl-4 w-50% border-2 border-blue-600 rounded-md focus:border-blue-600"
+                    type="text"
+                    placeholder="Username"
+                    name="username"
+                    id="username"
+                  />
+                  <input
+                    className="h-10 md:h-14 pl-4 w-50% border-2 border-blue-600 rounded-md focus:border-blue-600"
+                    type="text"
+                    placeholder="Bio"
+                    name="bio"
+                    id="bio"
+                  />
+
+                  <div className="flex gap-4">
+                    <button
+                      onClick={toggleModal}
+                      className="right-8 lg:right-28 xl:right-32 text-sm md:text-base text-normal text-black border-black border-2 rounded-3xl px-6 py-1 md:px-12 md:py-2 bg-white hover:bg-gray-300 transition-all ease-in-out duration-300"
+                    >
+                      Save
+                    </button>
+                    <button
+                      onClick={toggleModal}
+                      className="right-8 lg:right-28 xl:right-32 text-sm md:text-base text-normal border-black border-2 rounded-3xl px-6 py-1 md:px-12 md:py-2 bg-gray-700 hover:bg-gray-500 text-white transition-all ease-in-out duration-300"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         )}
       </div>
