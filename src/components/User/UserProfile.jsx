@@ -2,11 +2,17 @@ import { useState, useEffect } from "react";
 import { fetchUser } from "../../api";
 import { useParams } from "react-router-dom";
 import NavigationOverall from "../../elements/Navigation/NavigationOverall";
+import { fetchHotelBooking, fetchTravelBooking } from "../../api";
+import UserBookings from "../../elements/UserBookings";
 
 const UserProfile = () => {
+  const hotelUrl = "/hotel";
+  const travelUrl = "/travel";
   const { userId } = useParams();
   const [user, setUser] = useState();
   const [openModal, setOpenModal] = useState(false);
+  const [hotelBooking, setHotelBooking] = useState([]);
+  const [travelBooking, setTravelBooking] = useState([]);
 
   useEffect(() => {
     const getUser = async () => {
@@ -15,7 +21,21 @@ const UserProfile = () => {
       console.log(userData);
     };
 
+    const getHotelBooking = async () => {
+      const data = await fetchHotelBooking();
+      setHotelBooking(data);
+      console.log(data);
+    };
+
+    const getTravelBooking = async () => {
+      const data = await fetchTravelBooking();
+      setTravelBooking(data);
+      console.log(data);
+    };
+
     getUser();
+    getHotelBooking();
+    getTravelBooking();
   }, [userId]);
 
   const toggleModal = () => {
@@ -54,10 +74,26 @@ const UserProfile = () => {
             </div>
 
             {/* user details */}
-            <div className="h-80 pt-24 flex flex-col">
+            <div className="h-full pt-24 pb-10 flex flex-col">
               <h1 className="font-bold text-xl">{user.name}</h1>
               <p className="text-gray-500 text-sm">{user.userHandle}</p>
               <p className="text-[0.95rem]">{user.bio}</p>
+            </div>
+
+            {/* user hotels booking */}
+            <h2 className="font-semibold text-sm md:text-xl lg:2xl">
+              Hotel Bookings
+            </h2>
+            <div>
+              <UserBookings data={hotelBooking} url={hotelUrl} />
+            </div>
+
+            {/* user travel packages booking */}
+            <h2 className="font-semibold text-sm md:text-xl lg:2xl mt-8">
+              Travel Packages Bookings
+            </h2>
+            <div>
+              <UserBookings data={travelBooking} url={travelUrl} />
             </div>
 
             {/* edit user details */}

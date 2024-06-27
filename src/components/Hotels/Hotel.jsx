@@ -4,7 +4,7 @@ import {
   fetchHotel,
   fetchHotelReviews,
   postHotelReview,
-  // submitReview
+  bookHotel,
 } from "../../api";
 import NavigationOverall from "../../elements/Navigation/NavigationOverall";
 import FFAll from "../../elements/Footers/FFAll";
@@ -37,6 +37,11 @@ const Hotel = () => {
     getHotel();
     getReviews();
   }, [id]);
+
+  const handleBookHotel = async (hotelName) => {
+    const book = await bookHotel(hotelName);
+    console.log(book);
+  };
 
   const handleStarClick = (index) => {
     setReviewData((prevData) => ({
@@ -128,7 +133,10 @@ const Hotel = () => {
                   <p>{hotel.description}</p>
                 </div>
                 <div className="flex sm:flex-1 flex-col justify-center items-center">
-                  <button className="bg-blue-600 hover:bg-blue-800 text-white px-8 py-1 rounded-md font-medium mt-4">
+                  <button
+                    onClick={() => handleBookHotel(hotel.name)}
+                    className="bg-blue-600 hover:bg-blue-800 text-white px-8 py-1 md:px-8 md:py-3 rounded-md font-medium mt-4"
+                  >
                     Book Now
                   </button>
                 </div>
@@ -231,7 +239,7 @@ const Hotel = () => {
                   </div>
                   <button
                     type="submit"
-                    className="bg-blue-600 hover:bg-blue-800 text-white px-4 py-1 rounded-md font-medium"
+                    className="bg-blue-600 hover:bg-blue-800 text-white px-4 py-1 md:px-8 md:py-3 rounded-md font-medium"
                   >
                     Submit Review
                   </button>
