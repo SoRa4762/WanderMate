@@ -53,13 +53,13 @@ const UserProfile = () => {
             {/* profile and cover image */}
             <div className="relative h-80 w-full">
               <img
-                className="h-80 bg-pink-600 w-full object-cover rounded-lg cursor-pointer"
+                className="h-80 w-full object-cover rounded-lg cursor-pointer"
                 src={user.coverImage}
                 alt={user.name}
               />
               <div className="h-full w-full">
                 <img
-                  className="absolute bg-red-500 left-8 top-[16.8rem] md:top-56 lg:left-28 xl:left-32 h-24 w-24 md:h-48 md:w-48 rounded-full object-cover cursor-pointer border-2 border-white"
+                  className="absolute left-8 top-[16.8rem] md:top-56 lg:left-28 xl:left-32 h-24 w-24 md:h-48 md:w-48 rounded-full object-cover cursor-pointer border-2 border-white"
                   src={user.image}
                   alt={user.name}
                 />
